@@ -191,7 +191,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-28 15:06:02 / 修改时间：19:06:14" itemprop="dateCreated datePublished" datetime="2020-02-28T15:06:02+08:00">2020-02-28</time>
+              <time title="创建时间：2020-02-28 15:06:02 / 修改时间：19:55:31" itemprop="dateCreated datePublished" datetime="2020-02-28T15:06:02+08:00">2020-02-28</time>
             </span>
 
           
@@ -206,50 +206,14 @@
 
       
           <p>为了更好的在舆情项目中应用我们提出的算法ExpCP，近期我们想对算法进行收敛性分析。大多数张量补全算法只是在算法及优化层面进行改进，很少有涉及补全框架的收敛性分析。经过一段时间的文献阅读后，我们将重点放在了Trace Norm Regularized CANDECOMP/PARAFAC Decomposition With Missing Data这篇文章。</p>
-<p>​        本文提出的算法TNCP将trace norm作为正则项加入到张量CP分解的框架中，并且使用ADMM来进行优化。定义张量的n-rank如下，</p>
-<img src="/image/image-20200228150743790.png" alt="image-20200228150743790" style="zoom:40%;" />
-
-<p>常见的低秩张量补全问题就可以描述为，</p>
-<img src="/image/image-20200228150806448.png" alt="image-20200228150806448" style="zoom:40%;" />
-
-<p>一些研究者提出可以最小化n-rank的weighted求和形式，但rank本身是非凸的函数，所以一种方案是使用trace norm作为rank的凸松弛，结合上噪声项，这一问题可以描述为，</p>
-<img src="/image/image-20200228150829584.png" alt="image-20200228150829584" style="zoom:40%;" />
-
-<p>但由于张量X的unfolding矩阵维度较大，所以在迭代过程中进行的SVD分解会带来很大的计算成本。作者在这里提出可以用张量CP分解后factor matrix来代替原始unfolding矩阵，这是由如下定理所保证的，</p>
-<img src="/image/image-20200228150852981.png" alt="image-20200228150852981" style="zoom:40%;" />
-
-<p>我们不直接使用U矩阵的rank，同样是利用trace norm作为其凸松弛进行优化，TNCP的目标函数最终可以写成如下形式，</p>
-<img src="/image/image-20200228150909225.png" alt="image-20200228150909225" style="zoom:40%;" />
-
-<p>为了找到最优解，采用ADMM算法，优化过程如下（在这里我们省略每一步更新的具体求解），</p>
-<img src="/image/image-20200228150923299.png" alt="image-20200228150923299" style="zoom:40%;" />
-
-<p>伪代码如下，</p>
-<img src="/image/image-20200228151008399.png" alt="image-20200228151008399" style="zoom:40%;" />
-
-
-
-<p>​        接下来的收敛性分析便是这篇文章最出彩的地方，先给出主要结论，</p>
-<img src="/image/image-20200228150940351.png" alt="image-20200228150940351" style="zoom:40%;" />
-
-<p>我将证明分为4个部分来进行总结：</p>
-<ol>
-<li><p>证明变量的有界性：通过M的更新方式来证明拉格朗日乘子Y是有界的，这部分证明中使用了[Z. Lin，2009]这篇文章中的一条引理。进一步，由增广拉格朗日函数中M的表达形式结合Y的有界性来证明M的有界性。最后再利用U与M、Y的关系来说明U也是有界的。</p>
-</li>
-<li><p>由Y的更新方式来证明M和U最终收敛到同一个值，从而说明随着k的增长，二者趋于feasible solution（即满足问题的限制条件M=U）。</p>
-</li>
-<li><p>在ADMM更新U矩阵时，通过求导可以具体写出下一步更新的closed form，将式中的M全部替换为U和Y，我们可以证明$||U_n^{k+1}-U_n^k||_F = O((\mu^k)^{-1})$。使用类似的证明同样可以证明M和Y也是Cauchy sequence。</p>
-</li>
-<li><p>写出原始问题的KKT条件，再分别写出U与M的更新过程，结合两式可以发现U与M最终趋于原始问题的KKT点。这样就完成了整个证明，算法具有不错的收敛性，这部分内容非常值得我们参考。</p>
-</li>
-</ol>
-<p>​        接下来作者对算法复杂度进行了分析，</p>
-<img src="/image/image-20200228151023895.png" alt="image-20200228151023895" style="zoom:45%;" />
-
-<p>并通过一些实验来验证了算法的有效性，这里不再赘述，仅将结果呈现。</p>
-<img src="/image/image-20200228151054557.png" alt="image-20200228151054557" style="zoom:50%;" />
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/28/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATrace%20Norm%20Regularized%20CANDECOMP:PARAFAC%20Decomposition%20With%20Missing%20Data/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -299,7 +263,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 14:53:35" itemprop="dateModified" datetime="2020-02-28T14:53:35+08:00">2020-02-28</time>
+                <time title="修改时间：2020-02-28 19:57:13" itemprop="dateModified" datetime="2020-02-28T19:57:13+08:00">2020-02-28</time>
               </span>
 
           
@@ -313,53 +277,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="剑指offer"><a href="#剑指offer" class="headerlink" title="剑指offer"></a>剑指offer</h1><h5 id="3-数组中重复的数字-：找出数组中任意一个重复的数字"><a href="#3-数组中重复的数字-：找出数组中任意一个重复的数字" class="headerlink" title="[3-数组中重复的数字]：找出数组中任意一个重复的数字"></a>[3-数组中重复的数字]：找出数组中任意一个重复的数字</h5><p>方法1：遍历一遍，用字典存储，若key出现过则直接return              O(n)</p>
-<p>方法2：排序，若<code>nums[i]==nums[i+1]</code>，则return                             O(nlogn)但不需要额外空间</p>
-<h4 id="4-二维数组中的查找-在一个-n-m-的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。"><a href="#4-二维数组中的查找-在一个-n-m-的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。" class="headerlink" title="[4-二维数组中的查找]在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。"></a>[4-二维数组中的查找]在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</h4><p><a href="">从右上角元素看，像是一个二分搜索树</a>。所以<code>当前元素&lt;target</code> 向下，<code>当前元素&gt;target</code>向左，到达边界时没搜到返回False</p>
-<h5 id="5-替换空格-请实现一个函数，把字符串-s-中的每个空格替换成”-20”。"><a href="#5-替换空格-请实现一个函数，把字符串-s-中的每个空格替换成”-20”。" class="headerlink" title="[5-替换空格]请实现一个函数，把字符串 s 中的每个空格替换成”%20”。"></a>[5-替换空格]请实现一个函数，把字符串 <code>s</code> 中的每个空格替换成”%20”。</h5><p>难点：1. 注意python中字符串是不可修改的，所以需要转化成list      2. list转字符串<code>&#39;str&#39;.join(s)</code>其中str代表用什么字符连接每个s里面的元素</p>
-<h5 id="6-从尾到头打印链表"><a href="#6-从尾到头打印链表" class="headerlink" title="[6-从尾到头打印链表]"></a>[6-从尾到头打印链表]</h5><p>方法1：按顺序记录进list，之后list.reverse()</p>
-<p>方法2：借用栈的特性反转</p>
-<p>方法3：写递归算法，注意的是res.append()一样要放在递归调用之后，这样才能达到反转的目的。</p>
-<h4 id="7-重建二叉树-给定一个二叉树的前序遍历list和中序遍历list，重构这个树"><a href="#7-重建二叉树-给定一个二叉树的前序遍历list和中序遍历list，重构这个树" class="headerlink" title="[7-重建二叉树]给定一个二叉树的前序遍历list和中序遍历list，重构这个树"></a>[7-重建二叉树]给定一个二叉树的前序遍历list和中序遍历list，重构这个树</h4><p>题目分析：</p>
-<p>前序遍历特点： 节点按照 [ 根节点 | 左子树 | 右子树 ] 排序，以题目示例为例：[ 3 | 9 | 20 15 7 ]<br>中序遍历特点： 节点按照 [ 左子树 | 根节点 | 右子树 ] 排序，以题目示例为例：[ 9 | 3 | 15 20 7 ]</p>
-<p>根据题目描述输入的前序遍历和中序遍历的结果中都不含重复的数字，其表明树中每个节点值都是唯一的。<br>根据以上特点，可以按顺序完成以下工作：</p>
-<ol>
-<li>前序遍历的首个元素即为根节点 root 的值；</li>
-<li>在中序遍历中搜索根节点 root 的索引 ，可将中序遍历划分为 [ 左子树 | 根节点 | 右子树 ] 。</li>
-<li>根据中序遍历中的左（右）子树的节点数量，可将前序遍历划分为 [ 根节点 | 左子树 | 右子树 ] 。</li>
-</ol>
-<p>子树的前序和中序遍历仍符合以上特点，我们可以通过同样的方法对左（右）子树进行划分，每轮可确认三个节点的关系 。此递推性质让我们联想到用 递归方法 处理。</p>
-<h5 id="7-重建二叉树-给定一个二叉树的后序遍历list和中序遍历list，重构这个树"><a href="#7-重建二叉树-给定一个二叉树的后序遍历list和中序遍历list，重构这个树" class="headerlink" title="[7*-重建二叉树]给定一个二叉树的后序遍历list和中序遍历list，重构这个树"></a>[7*-重建二叉树]给定一个二叉树的后序遍历list和中序遍历list，重构这个树</h5><p>完全一样的思路</p>
-<h4 id="09-使用两个栈来构造队列，实现appendTail和deleteHead"><a href="#09-使用两个栈来构造队列，实现appendTail和deleteHead" class="headerlink" title="[09-使用两个栈来构造队列，实现appendTail和deleteHead]"></a>[09-使用两个栈来构造队列，实现appendTail<code>和</code>deleteHead]</h4><p>思路：stack1作为进入队列存储的，stack2作为删除时候需要用的</p>
-<ol>
-<li>append方法可以由stack1.append(value)实现</li>
-<li>delete：若stack2为空，则<code>stack2.append(stack1.pop())</code>将已经入队的元素逆序排进Stack2，此时<code>res = stack2.pop() if stack2!= [] else -1</code></li>
-</ol>
-<p><strong>技巧：stack2弹出后不必再重建stack1，因为stack2的顺序就是未来队列出队的顺序，当stack2里面没有元素之后再搬运stack1累积加入的这些元素进入stack2.</strong></p>
-<h5 id="10斐波那契数列、上n级台阶的方式总数-：动态规划"><a href="#10斐波那契数列、上n级台阶的方式总数-：动态规划" class="headerlink" title="[10斐波那契数列、上n级台阶的方式总数]：动态规划"></a>[10斐波那契数列、上n级台阶的方式总数]：动态规划</h5><h4 id="11-旋转数组中的最小元素-把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素"><a href="#11-旋转数组中的最小元素-把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素" class="headerlink" title="[11-旋转数组中的最小元素]把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素"></a>[11-旋转数组中的最小元素]把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素</h4><p>我的想法是每次二分法，找左右哪部分是乱序的，这个旋转点一定是在乱序数组中的。当i==j时返回</p>
-<p>难点：严格找乱序的位置，注意各种边界条件比较难，一个是乱序的位置一直到哪,mid+1还是mid。第二是如果相等的话说明不能判断左右哪部分乱序，需要r=r-1</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mid = (l+r)//<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> numbers[mid]&lt;numbers[r]:r = mid</span><br><span class="line"><span class="keyword">elif</span> numbers[mid]&gt;numbers[r]:l = mid+<span class="number">1</span></span><br><span class="line"><span class="keyword">else</span>:r = r<span class="number">-1</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="12-矩阵中的数字-请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。"><a href="#12-矩阵中的数字-请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。" class="headerlink" title="[12-矩阵中的数字]请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。"></a>[12-矩阵中的数字]请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。</h4><p>思路：设置全局变量self.sech来代表是否搜索到，idx矩阵代表当前位置是否已经搜索过。最初遍历row和col，发现对应单词第一个位置相同的时候，开始dfs搜索，dfs结束后<code>if self.sech == True: return(True)</code>，<code>else: idx[i][j]=0</code>，row和col全部遍历完还没找到的话<code>return(false)</code></p>
-<p>难点：1. dfs要对是否越界和是否搜索过做出判断  2. dfs搜索不到的时候要把对应的idx改为0  3.dfs搜索到的话迅速一层层返回 </p>
-<h5 id="13-机器人的运动范围-地上有一个m行n列的方格，从坐标-0-0-到坐标-m-1-n-1-。一个机器人从坐标-0-0-的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。请问该机器人能够到达多少个格子？"><a href="#13-机器人的运动范围-地上有一个m行n列的方格，从坐标-0-0-到坐标-m-1-n-1-。一个机器人从坐标-0-0-的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。请问该机器人能够到达多少个格子？" class="headerlink" title="[13-机器人的运动范围]地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。请问该机器人能够到达多少个格子？"></a>[13-机器人的运动范围]地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。请问该机器人能够到达多少个格子？</h5><p>思路：和上一题非常相似但是更为简单，dfs回溯的时候不需要改idx，单独写一个计算数位之和的函数，最后统计idx里面1的个数，这一步我用的是<code>sum([i.count(1) for i in idx])</code></p>
-<h5 id="14-割绳子-把长度为n的绳子分为m段，每段是整数，m个数乘积最大"><a href="#14-割绳子-把长度为n的绳子分为m段，每段是整数，m个数乘积最大" class="headerlink" title="[14-割绳子]把长度为n的绳子分为m段，每段是整数，m个数乘积最大"></a>[14-割绳子]把长度为n的绳子分为m段，每段是整数，m个数乘积最大</h5><p>思路：这其实是一个数学题目，找到规律就可以解决了。发现5&lt;2*3,4 = 2*2，所以尽可能分解成2和3的乘积，又因为2*2*2&lt;3*3所以最好是3更多，但是不要出现1</p>
-<p>解决方法1（动态规划）： res = [0,1,2,4,6,9]，之后每一个都是res.append(res[i-3]*3)</p>
-<p>解决方法2：n%3余1的时候拿出一个3拆分成两个2，<code>pow(3, n//3-1)*2*2</code>；余2，<code>pow(3,n//3)*2</code>，余0，<code>pow(3,n//3)</code></p>
-<h5 id="14-割绳子-n的取值更大了，可能出现很大的数，但由于语言特性，理论上-Python-中的变量取值范围由系统内存大小决定（无限大），因此在-Python-中其实不用考虑大数越界问题。"><a href="#14-割绳子-n的取值更大了，可能出现很大的数，但由于语言特性，理论上-Python-中的变量取值范围由系统内存大小决定（无限大），因此在-Python-中其实不用考虑大数越界问题。" class="headerlink" title="[14*-割绳子]n的取值更大了，可能出现很大的数，但由于语言特性，理论上 Python 中的变量取值范围由系统内存大小决定（无限大），因此在 Python 中其实不用考虑大数越界问题。"></a>[14*-割绳子]n的取值更大了，可能出现很大的数，但由于语言特性，理论上 Python 中的变量取值范围由系统内存大小决定（无限大），因此在 Python 中其实不用考虑大数越界问题。</h5><h5 id="15-二进制后1的个数"><a href="#15-二进制后1的个数" class="headerlink" title="[15-二进制后1的个数]"></a>[15-二进制后1的个数]</h5><p>思路1(代码最简单):<em>return(bin(n).count(‘1’))</em></p>
-<p>思路2(手写二进制转换的同时用一个内部计数器counter计数)</p>
-<p>思路3(位运算，这个是真的不熟悉)    <code>while n:   n = n &amp; (n-1)   count += 1</code>最后<code>return count</code></p>
-<h4 id="16-数值的整数次方"><a href="#16-数值的整数次方" class="headerlink" title="[16-数值的整数次方]"></a>[16-数值的整数次方]</h4><p>这一题如果暴力递归的话复杂度是O(n)，想法是$x^{100} = {x^{50}}^{2}$这种方式去达到O(logn)的复杂度。另外定义一个递归函数，去调用它即可</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fastpow</span><span class="params">(x,n)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> n==<span class="number">1</span>: <span class="keyword">return</span>(x)</span><br><span class="line">  <span class="keyword">if</span> n%<span class="number">2</span>==<span class="number">0</span>:</span><br><span class="line">    <span class="keyword">return</span>(fastpow(x,n/<span class="number">2</span>)**<span class="number">2</span> )</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span>(fastpow(x,n//<span class="number">2</span>)**<span class="number">2</span> *x)</span><br></pre></td></tr></table></figure>
-
-<p><strong>思考：熟悉统计里面最大化似然函数方法的话，立马会想到先取对数再取指数，复杂度降低到O(1)。虽然精度上稍微差一点，但实际问题往往是这样去处理的。没必要为了算法而算法</strong></p>
-<h5 id="17-打印1到最大的n位数"><a href="#17-打印1到最大的n位数" class="headerlink" title="[17-打印1到最大的n位数]"></a>[17-打印1到最大的n位数]</h5><p>这道题据说在考大数问题；但并没有遇到之类的报错，就当是重温列表推导式<code>res = [i for i in range(1,10**n)]</code></p>
-<h5 id="18-删除链表的节点-：给定链表head，删除值为val的节点。假定val一定存在且唯一"><a href="#18-删除链表的节点-：给定链表head，删除值为val的节点。假定val一定存在且唯一" class="headerlink" title="[18-删除链表的节点]：给定链表head，删除值为val的节点。假定val一定存在且唯一"></a>[18-删除链表的节点]：给定链表head，删除值为val的节点。假定val一定存在且唯一</h5><p>考察链表基本操作，设定一个cur指针就可以完成。注意的是边界条件删除head或者最后一个。</p>
-<h5 id="21-调整数组顺序使得奇数在偶数前面"><a href="#21-调整数组顺序使得奇数在偶数前面" class="headerlink" title="[21-调整数组顺序使得奇数在偶数前面]"></a>[21-调整数组顺序使得奇数在偶数前面]</h5><p>思路：这一题就和快排子问题一样，用快慢指针就可以了。</p>
-<h4 id="22-链表中倒数k个节点-：输入一个链表，输出该链表中倒数k个节点。"><a href="#22-链表中倒数k个节点-：输入一个链表，输出该链表中倒数k个节点。" class="headerlink" title="[22-链表中倒数k个节点]：输入一个链表，输出该链表中倒数k个节点。"></a>[22-链表中倒数k个节点]：输入一个链表，输出该链表中倒数k个节点。</h4><p>思路：快慢指针，先让快的走k步，然后快慢一起走，快的走到终点的时候，慢指针就是我们需要的。</p>
-
+          <h1 id="剑指offer"><a href="#剑指offer" class="headerlink" title="剑指offer"></a>剑指offer</h1><p>我会在这部分记录剑指offer的题目及个人做题经验，可能会日常更新。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/21/%E5%89%91%E6%8C%87offer/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -404,6 +330,13 @@
 
               <time title="创建时间：1996-02-22 12:00:00" itemprop="dateCreated datePublished" datetime="1996-02-22T12:00:00+08:00">1996-02-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-28 19:55:40" itemprop="dateModified" datetime="2020-02-28T19:55:40+08:00">2020-02-28</time>
+              </span>
 
           
 
@@ -418,7 +351,14 @@
       
           <p>Welcome to <a href="https://yangjichen.github.io" target="_blank" rel="noopener">Jichen’s Blog</a>! I will mainly record some notes about learning Statistics / Machine Learning / Algorithms / Tensor Completion.</p>
 <p>欢迎来到继琛的<a href="https://yangjichen.github.io" target="_blank" rel="noopener">博客</a>，在这里我将主要记录一些统计/ 机器学习/ 算法/ 张量补全的研究与学习。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/1996/02/22/Hello%20world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
