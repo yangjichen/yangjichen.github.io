@@ -20,30 +20,30 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="​        为了更好的在舆情项目中应用我们提出的算法ExpCP，近期我们想对算法进行收敛性分析。大多数张量补全算法只是在算法及优化层面进行改进，很少有涉及补全框架的收敛性分析。经过一段时间的文献阅读后，我们将重点放在了Trace Norm Regularized CANDECOMP&#x2F;PARAFAC Decomposition With Missing Data这篇文章。 ​        本">
+  <meta name="description" content="为了更好的在舆情项目中应用我们提出的算法ExpCP，近期我们想对算法进行收敛性分析。大多数张量补全算法只是在算法及优化层面进行改进，很少有涉及补全框架的收敛性分析。经过一段时间的文献阅读后，我们将重点放在了Trace Norm Regularized CANDECOMP&#x2F;PARAFAC Decomposition With Missing Data这篇文章。 ​        本文提出的算法TNC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文阅读：Trace Norm Regularized CANDECOMP:PARAFAC Decomposition With Missing Data">
 <meta property="og:url" content="http://yoursite.com/2020/02/28/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATrace%20Norm%20Regularized%20CANDECOMP:PARAFAC%20Decomposition%20With%20Missing%20Data/index.html">
 <meta property="og:site_name" content="Jichenの博客">
-<meta property="og:description" content="​        为了更好的在舆情项目中应用我们提出的算法ExpCP，近期我们想对算法进行收敛性分析。大多数张量补全算法只是在算法及优化层面进行改进，很少有涉及补全框架的收敛性分析。经过一段时间的文献阅读后，我们将重点放在了Trace Norm Regularized CANDECOMP&#x2F;PARAFAC Decomposition With Missing Data这篇文章。 ​        本">
+<meta property="og:description" content="为了更好的在舆情项目中应用我们提出的算法ExpCP，近期我们想对算法进行收敛性分析。大多数张量补全算法只是在算法及优化层面进行改进，很少有涉及补全框架的收敛性分析。经过一段时间的文献阅读后，我们将重点放在了Trace Norm Regularized CANDECOMP&#x2F;PARAFAC Decomposition With Missing Data这篇文章。 ​        本文提出的算法TNC">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228150743790.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228150806448.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228150829584.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228150852981.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228150909225.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228150923299.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228151008399.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228150940351.png">
-<meta property="og:image" content="file:////Users/yangjichen/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228151023895.png">
-<meta property="og:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228151054557.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228150743790.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228150806448.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228150829584.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228150852981.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228150909225.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228150923299.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228151008399.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228150940351.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/clip_image009.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228151023895.png">
+<meta property="og:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228151054557.png">
 <meta property="article:published_time" content="2020-02-28T07:06:02.763Z">
-<meta property="article:modified_time" content="2020-02-28T07:13:43.334Z">
+<meta property="article:modified_time" content="2020-02-28T08:02:06.631Z">
 <meta property="article:author" content="Jichen">
 <meta property="article:tag" content="统计&#x2F;机器学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/Users/yangjichen/Library/Application%20Support/typora-user-images/image-20200228150743790.png">
+<meta name="twitter:image" content="http://yoursite.com/Users/yangjichen/MyBlog/source/image/image-20200228150743790.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/02/28/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATrace%20Norm%20Regularized%20CANDECOMP:PARAFAC%20Decomposition%20With%20Missing%20Data/">
 
@@ -204,7 +204,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-28 15:06:02 / 修改时间：15:13:43" itemprop="dateCreated datePublished" datetime="2020-02-28T15:06:02+08:00">2020-02-28</time>
+              <time title="创建时间：2020-02-28 15:06:02 / 修改时间：16:02:06" itemprop="dateCreated datePublished" datetime="2020-02-28T15:06:02+08:00">2020-02-28</time>
             </span>
 
           
@@ -218,43 +218,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>​        为了更好的在舆情项目中应用我们提出的算法ExpCP，近期我们想对算法进行收敛性分析。大多数张量补全算法只是在算法及优化层面进行改进，很少有涉及补全框架的收敛性分析。经过一段时间的文献阅读后，我们将重点放在了Trace Norm Regularized CANDECOMP/PARAFAC Decomposition With Missing Data这篇文章。</p>
+        <p>为了更好的在舆情项目中应用我们提出的算法ExpCP，近期我们想对算法进行收敛性分析。大多数张量补全算法只是在算法及优化层面进行改进，很少有涉及补全框架的收敛性分析。经过一段时间的文献阅读后，我们将重点放在了Trace Norm Regularized CANDECOMP/PARAFAC Decomposition With Missing Data这篇文章。</p>
 <p>​        本文提出的算法TNCP将trace norm作为正则项加入到张量CP分解的框架中，并且使用ADMM来进行优化。定义张量的n-rank如下，</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228150743790.png" alt="image-20200228150743790" style="zoom:40%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228150743790.png" alt="image-20200228150743790" style="zoom:40%;" />
 
 <p>常见的低秩张量补全问题就可以描述为，</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228150806448.png" alt="image-20200228150806448" style="zoom:40%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228150806448.png" alt="image-20200228150806448" style="zoom:40%;" />
 
 <p>一些研究者提出可以最小化n-rank的weighted求和形式，但rank本身是非凸的函数，所以一种方案是使用trace norm作为rank的凸松弛，结合上噪声项，这一问题可以描述为，</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228150829584.png" alt="image-20200228150829584" style="zoom:40%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228150829584.png" alt="image-20200228150829584" style="zoom:40%;" />
 
 <p>但由于张量X的unfolding矩阵维度较大，所以在迭代过程中进行的SVD分解会带来很大的计算成本。作者在这里提出可以用张量CP分解后factor matrix来代替原始unfolding矩阵，这是由如下定理所保证的，</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228150852981.png" alt="image-20200228150852981" style="zoom:40%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228150852981.png" alt="image-20200228150852981" style="zoom:40%;" />
 
 <p>我们不直接使用U矩阵的rank，同样是利用trace norm作为其凸松弛进行优化，TNCP的目标函数最终可以写成如下形式，</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228150909225.png" alt="image-20200228150909225" style="zoom:40%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228150909225.png" alt="image-20200228150909225" style="zoom:40%;" />
 
 <p>为了找到最优解，采用ADMM算法，优化过程如下（在这里我们省略每一步更新的具体求解），</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228150923299.png" alt="image-20200228150923299" style="zoom:40%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228150923299.png" alt="image-20200228150923299" style="zoom:40%;" />
 
 <p>伪代码如下，</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228151008399.png" alt="image-20200228151008399" style="zoom:40%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228151008399.png" alt="image-20200228151008399" style="zoom:40%;" />
 
 
 
 <p>​        接下来的收敛性分析便是这篇文章最出彩的地方，先给出主要结论，</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228150940351.png" alt="image-20200228150940351" style="zoom:50%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228150940351.png" alt="image-20200228150940351" style="zoom:50%;" />
 
 <p>我将证明分为4个部分来进行总结：</p>
 <p>\1.   证明变量的有界性：通过M的更新方式来证明拉格朗日乘子Y是有界的，这部分证明中使用了[Z. Lin，2009]这篇文章中的一条引理。进一步，由增广拉格朗日函数中M的表达形式结合Y的有界性来证明M的有界性。最后再利用U与M、Y的关系来说明U也是有界的。</p>
 <p>\2.   由Y的更新方式来证明M和U最终收敛到同一个值，从而说明随着k的增长，二者趋于feasible solution（即满足问题的限制条件M=U）。</p>
-<p>\3.   在ADMM更新U矩阵时，通过求导可以具体写出下一步更新的closed form，将式中的M全部替换为U和Y，我们可以证明<img src="file:////Users/yangjichen/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png" alt="img">。使用类似的证明同样可以证明M和Y也是Cauchy sequence。</p>
+<p>\3.   在ADMM更新U矩阵时，通过求导可以具体写出下一步更新的closed form，将式中的M全部替换为U和Y，我们可以证明<img src="/Users/yangjichen/MyBlog/source/image/clip_image009.png" alt="img">。使用类似的证明同样可以证明M和Y也是Cauchy sequence。</p>
 <p>\4.   写出原始问题的KKT条件，再分别写出U与M的更新过程，结合两式可以发现U与M最终趋于原始问题的KKT点。这样就完成了整个证明，算法具有不错的收敛性，这部分内容非常值得我们参考。</p>
 <p>​        接下来作者对算法复杂度进行了分析，</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228151023895.png" alt="image-20200228151023895" style="zoom:50%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228151023895.png" alt="image-20200228151023895" style="zoom:50%;" />
 
 <p>并通过一些实验来验证了算法的有效性，这里不再赘述，仅将结果呈现。</p>
-<img src="/Users/yangjichen/Library/Application Support/typora-user-images/image-20200228151054557.png" alt="image-20200228151054557" style="zoom:50%;" />
+<img src="/Users/yangjichen/MyBlog/source/image/image-20200228151054557.png" alt="image-20200228151054557" style="zoom:50%;" />
 
 
     </div>
