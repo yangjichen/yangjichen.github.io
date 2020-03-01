@@ -20,18 +20,17 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="我会在这部分记录剑指offer的题目及个人做题经验，可能会日常更新。">
+  <meta name="description" content="剑指offer我会在这部分记录剑指offer的题目及个人做题经验，可能会日常更新。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指offer">
 <meta property="og:url" content="http://yoursite.com/2020/02/21/%E5%89%91%E6%8C%87offer/index.html">
 <meta property="og:site_name" content="窝">
-<meta property="og:description" content="我会在这部分记录剑指offer的题目及个人做题经验，可能会日常更新。">
+<meta property="og:description" content="剑指offer我会在这部分记录剑指offer的题目及个人做题经验，可能会日常更新。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-21T12:54:33.533Z">
-<meta property="article:modified_time" content="2020-02-28T12:27:30.629Z">
+<meta property="article:modified_time" content="2020-03-01T13:28:08.781Z">
 <meta property="article:author" content="杨继琛">
-<meta property="article:tag" content="剑指offer">
-<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="统计&#x2F;机器学习">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/02/21/%E5%89%91%E6%8C%87offer/">
@@ -129,12 +128,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">5</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -194,17 +193,8 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 20:27:30" itemprop="dateModified" datetime="2020-02-28T20:27:30+08:00">2020-02-28</time>
+                <time title="修改时间：2020-03-01 21:28:08" itemprop="dateModified" datetime="2020-03-01T21:28:08+08:00">2020-03-01</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
 
           
 
@@ -217,7 +207,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>我会在这部分记录剑指offer的题目及个人做题经验，可能会日常更新。</p>
+        <h1 id="剑指offer"><a href="#剑指offer" class="headerlink" title="剑指offer"></a>剑指offer</h1><p>我会在这部分记录剑指offer的题目及个人做题经验，可能会日常更新。</p>
 <a id="more"></a>
 
 <h5 id="3-数组中重复的数字-：找出数组中任意一个重复的数字"><a href="#3-数组中重复的数字-：找出数组中任意一个重复的数字" class="headerlink" title="[3-数组中重复的数字]：找出数组中任意一个重复的数字"></a>[3-数组中重复的数字]：找出数组中任意一个重复的数字</h5><p>方法1：遍历一遍，用字典存储，若key出现过则直接return              O(n)</p>
@@ -266,6 +256,44 @@
 <h5 id="18-删除链表的节点-：给定链表head，删除值为val的节点。假定val一定存在且唯一"><a href="#18-删除链表的节点-：给定链表head，删除值为val的节点。假定val一定存在且唯一" class="headerlink" title="[18-删除链表的节点]：给定链表head，删除值为val的节点。假定val一定存在且唯一"></a>[18-删除链表的节点]：给定链表head，删除值为val的节点。假定val一定存在且唯一</h5><p>考察链表基本操作，设定一个cur指针就可以完成。注意的是边界条件删除head或者最后一个。</p>
 <h5 id="21-调整数组顺序使得奇数在偶数前面"><a href="#21-调整数组顺序使得奇数在偶数前面" class="headerlink" title="[21-调整数组顺序使得奇数在偶数前面]"></a>[21-调整数组顺序使得奇数在偶数前面]</h5><p>思路：这一题就和快排子问题一样，用快慢指针就可以了。</p>
 <h4 id="22-链表中倒数k个节点-：输入一个链表，输出该链表中倒数k个节点。"><a href="#22-链表中倒数k个节点-：输入一个链表，输出该链表中倒数k个节点。" class="headerlink" title="[22-链表中倒数k个节点]：输入一个链表，输出该链表中倒数k个节点。"></a>[22-链表中倒数k个节点]：输入一个链表，输出该链表中倒数k个节点。</h4><p>思路：快慢指针，先让快的走k步，然后快慢一起走，快的走到终点的时候，慢指针就是我们需要的。</p>
+<h5 id="24-反转链表-：双指针可以做"><a href="#24-反转链表-：双指针可以做" class="headerlink" title="[24-反转链表]：双指针可以做"></a>[24-反转链表]：双指针可以做</h5><p>我死活想不明白为啥用栈+node无法实现，找人请教</p>
+<p>#####[25合并两个有序链表，使其合并完依然有序]</p>
+<p>思路用两个头指针去做，哪个小，新的合并哪个，当其中一个为None是，直接把剩下的并上</p>
+<p><strong><em>下面几道二叉树的题值得再做一遍，写递归一定要小心，注意条件，注意递归调用的前后，注意返回值</em></strong></p>
+<h4 id="26判断树的子结构-：输入两棵二叉树A和B，判断B是不是A的子结构。-约定空树不是任意一个树的子结构）。B是A的子结构，-即-A中有出现和B相同的结构和节点值。"><a href="#26判断树的子结构-：输入两棵二叉树A和B，判断B是不是A的子结构。-约定空树不是任意一个树的子结构）。B是A的子结构，-即-A中有出现和B相同的结构和节点值。" class="headerlink" title="[26判断树的子结构]：输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构）。B是A的子结构， 即 A中有出现和B相同的结构和节点值。"></a>[26判断树的子结构]：输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构）。B是A的子结构， 即 A中有出现和B相同的结构和节点值。</h4><p>这道题值得再写一遍，因为一点细节卡了很久。首先是准备工作，先回顾一下如何判断两棵树完全相同</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isSameTree</span><span class="params">(self, p: TreeNode, q: TreeNode)</span> -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> p==<span class="literal">None</span> <span class="keyword">and</span> q==<span class="literal">None</span>: <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">if</span> p==<span class="literal">None</span> <span class="keyword">or</span> q==<span class="literal">None</span>: <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">        <span class="keyword">if</span> p.val != q.val: <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">        <span class="keyword">return</span>(self.isSameTree(p.left,q.left) <span class="keyword">and</span> self.isSameTree(p.right,q.right))</span><br></pre></td></tr></table></figure>
+
+<p>原题逻辑：需要两个函数 (1)dfs搜索，发现A的某一节点值和Broot值相同时开始判断B是不是A的子结构 (2)判断子结构</p>
+<p>解决方案：</p>
+<ol>
+<li><p>因为dfs递归的返回值很绕很头晕，所以我宁愿加入一个初始值为FALSE的self.flag变量来记录存在子结构相同，最后直接去return这个值</p>
+</li>
+<li><p>我自己认为最恶心的地方在于子结构不是子树，最初大意忽略这一点debug好久，子结构判断方式如下，和子树有区别。主要是如何判断为TRUE</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isSub</span><span class="params">(p,q)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> q == <span class="literal">None</span>: <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">if</span> p == <span class="literal">None</span>: <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">if</span> p.val != q.val: <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">return</span>(isSub(p.left,q.left) <span class="keyword">and</span> isSub(p.right,q.right))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h5 id="27反转二叉树"><a href="#27反转二叉树" class="headerlink" title="[27反转二叉树]"></a>[27反转二叉树]</h5><p>之前做过，递归就完事了！</p>
+<h4 id="28-对称二叉树-：检查一个二叉树是否是中心轴对称的"><a href="#28-对称二叉树-：检查一个二叉树是否是中心轴对称的" class="headerlink" title="[28-对称二叉树]：检查一个二叉树是否是中心轴对称的"></a>[28-对称二叉树]：检查一个二叉树是否是中心轴对称的</h4><p>做过一次，但还是易错：轴对称意味着<code>left.left对称right.right</code>和<code>left.right对称right.left</code></p>
+<p>两种差不多的思路：(1)加入self.flag，不满足条件时去更新它，最后返回flag值就可以。 (2) 递归函数最后一行return <code>dfs(left.left,right.right) and dfs(left.right,right.left)</code></p>
+<p>这种判断True FALSE的题目，我越来越喜欢使用flag了…很清晰</p>
+<h5 id="29-顺时针打印矩阵-：输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。（一层一层剥开）"><a href="#29-顺时针打印矩阵-：输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。（一层一层剥开）" class="headerlink" title="[29-顺时针打印矩阵]：输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。（一层一层剥开）"></a>[29-顺时针打印矩阵]：输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。（一层一层剥开）</h5><p>首先运动顺序是右下左上，没有碰壁时一直运动，将当前位置打印。每次碰壁后就更换顺序，将现有顺序取出来并且放在顺序队列的最后(队列思想)。<br>判断碰壁：遇到边框，或者遇到以前已经打印过的值。<br>使用变量counter作为flag出现：没有打印但是连续四次转向说明已经打印完了。</p>
+<h4 id="30-包含min函数的栈-：设计一个栈，请在该类型中实现一个能够得到栈的最小元素的-min-函数在该栈中，调用-min、push-及-pop-的时间复杂度都是-O-1-。"><a href="#30-包含min函数的栈-：设计一个栈，请在该类型中实现一个能够得到栈的最小元素的-min-函数在该栈中，调用-min、push-及-pop-的时间复杂度都是-O-1-。" class="headerlink" title="[30-包含min函数的栈]：设计一个栈，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。"></a>[30-包含min函数的栈]：设计一个栈，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。</h4><p>思路：使用一个辅助栈，长度与原栈相同，<strong><em>每个位置代表原栈cut到这个长度时的最小值。</em></strong></p>
+<p>每次push时候同样需要更新辅助栈：新元素更小则append新元素，否则append辅助栈最后一个元素(意味着新加入一个元素后再cut到这一位，最小值还是之前那个)。pop时候同时pop两个栈，这样的结构就可以保证随时查询到最小值。</p>
+<h4 id="31-栈的压入与弹出-输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。"><a href="#31-栈的压入与弹出-输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。" class="headerlink" title="[31-栈的压入与弹出]输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。"></a>[31-栈的压入与弹出]输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。</h4><p>思路：模拟一遍操作（核心在于没有重复数字的假设）。每个元素按顺序入栈后，</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> stack!= [] <span class="keyword">and</span> stack[<span class="number">-1</span>]==popped[<span class="number">0</span>]:</span><br><span class="line">    stack.pop()</span><br><span class="line">    popped.pop(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>之后检查stack是否为空，不为空则说明poped顺序不合法。</p>
+<h5 id="32-从上到下广度优先打印二叉树-：从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。"><a href="#32-从上到下广度优先打印二叉树-：从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。" class="headerlink" title="[32-从上到下广度优先打印二叉树]：从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。"></a>[32-从上到下广度优先打印二叉树]：从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。</h5><p>广度优先搜索+queue。加入队列之前先判断是不是None</p>
+<h5 id="32-从上到下分层打印二叉树"><a href="#32-从上到下分层打印二叉树" class="headerlink" title="[32-从上到下分层打印二叉树]"></a>[32-从上到下分层打印二叉树]</h5><p>大体和上面一样，注意每一层打印的数量其实就是上层打印完之后队列的长度，记录这个值就很方便完成。</p>
+<h4 id="32-从上到下分层打印二叉树，第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，以此类推"><a href="#32-从上到下分层打印二叉树，第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，以此类推" class="headerlink" title="[32-从上到下分层打印二叉树，第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，以此类推]"></a>[32-从上到下分层打印二叉树，第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，以此类推]</h4><p>和上面一样，多一个flag来判断当前层的结果subres是否需要reverse</p>
+<p>整体上来看：如果这个题一上来就是最难版本，也要意识到一层一层打印就算顺序有变化，也应该是BFS去实现。</p>
 
     </div>
 
@@ -291,10 +319,6 @@
 
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E5%89%91%E6%8C%87offer/" rel="tag"># 剑指offer</a>
-              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
-          </div>
 
         
 
@@ -368,7 +392,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-数组中重复的数字-：找出数组中任意一个重复的数字"><span class="nav-number">1.</span> <span class="nav-text">[3-数组中重复的数字]：找出数组中任意一个重复的数字</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-二维数组中的查找-在一个-n-m-的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。"><span class="nav-number"></span> <span class="nav-text">[4-二维数组中的查找]在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-替换空格-请实现一个函数，把字符串-s-中的每个空格替换成”-20”。"><span class="nav-number">1.</span> <span class="nav-text">[5-替换空格]请实现一个函数，把字符串 s 中的每个空格替换成”%20”。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-从尾到头打印链表"><span class="nav-number">2.</span> <span class="nav-text">[6-从尾到头打印链表]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-重建二叉树-给定一个二叉树的前序遍历list和中序遍历list，重构这个树"><span class="nav-number"></span> <span class="nav-text">[7-重建二叉树]给定一个二叉树的前序遍历list和中序遍历list，重构这个树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#7-重建二叉树-给定一个二叉树的后序遍历list和中序遍历list，重构这个树"><span class="nav-number">1.</span> <span class="nav-text">[7*-重建二叉树]给定一个二叉树的后序遍历list和中序遍历list，重构这个树</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#09-使用两个栈来构造队列，实现appendTail和deleteHead"><span class="nav-number"></span> <span class="nav-text">[09-使用两个栈来构造队列，实现appendTail和deleteHead]</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#10斐波那契数列、上n级台阶的方式总数-：动态规划"><span class="nav-number">1.</span> <span class="nav-text">[10斐波那契数列、上n级台阶的方式总数]：动态规划</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-旋转数组中的最小元素-把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素"><span class="nav-number"></span> <span class="nav-text">[11-旋转数组中的最小元素]把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-矩阵中的数字-请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。"><span class="nav-number"></span> <span class="nav-text">[12-矩阵中的数字]请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#13-机器人的运动范围-地上有一个m行n列的方格，从坐标-0-0-到坐标-m-1-n-1-。一个机器人从坐标-0-0-的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。请问该机器人能够到达多少个格子？"><span class="nav-number">1.</span> <span class="nav-text">[13-机器人的运动范围]地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。请问该机器人能够到达多少个格子？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-割绳子-把长度为n的绳子分为m段，每段是整数，m个数乘积最大"><span class="nav-number">2.</span> <span class="nav-text">[14-割绳子]把长度为n的绳子分为m段，每段是整数，m个数乘积最大</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-割绳子-n的取值更大了，可能出现很大的数，但由于语言特性，理论上-Python-中的变量取值范围由系统内存大小决定（无限大），因此在-Python-中其实不用考虑大数越界问题。"><span class="nav-number">3.</span> <span class="nav-text">[14*-割绳子]n的取值更大了，可能出现很大的数，但由于语言特性，理论上 Python 中的变量取值范围由系统内存大小决定（无限大），因此在 Python 中其实不用考虑大数越界问题。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#15-二进制后1的个数"><span class="nav-number">4.</span> <span class="nav-text">[15-二进制后1的个数]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-数值的整数次方"><span class="nav-number"></span> <span class="nav-text">[16-数值的整数次方]</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#17-打印1到最大的n位数"><span class="nav-number">1.</span> <span class="nav-text">[17-打印1到最大的n位数]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#18-删除链表的节点-：给定链表head，删除值为val的节点。假定val一定存在且唯一"><span class="nav-number">2.</span> <span class="nav-text">[18-删除链表的节点]：给定链表head，删除值为val的节点。假定val一定存在且唯一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#21-调整数组顺序使得奇数在偶数前面"><span class="nav-number">3.</span> <span class="nav-text">[21-调整数组顺序使得奇数在偶数前面]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-链表中倒数k个节点-：输入一个链表，输出该链表中倒数k个节点。"><span class="nav-number"></span> <span class="nav-text">[22-链表中倒数k个节点]：输入一个链表，输出该链表中倒数k个节点。</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#剑指offer"><span class="nav-number">1.</span> <span class="nav-text">剑指offer</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-数组中重复的数字-：找出数组中任意一个重复的数字"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">[3-数组中重复的数字]：找出数组中任意一个重复的数字</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-二维数组中的查找-在一个-n-m-的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">[4-二维数组中的查找]在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-替换空格-请实现一个函数，把字符串-s-中的每个空格替换成”-20”。"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">[5-替换空格]请实现一个函数，把字符串 s 中的每个空格替换成”%20”。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-从尾到头打印链表"><span class="nav-number">1.0.0.1.2.</span> <span class="nav-text">[6-从尾到头打印链表]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-重建二叉树-给定一个二叉树的前序遍历list和中序遍历list，重构这个树"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">[7-重建二叉树]给定一个二叉树的前序遍历list和中序遍历list，重构这个树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#7-重建二叉树-给定一个二叉树的后序遍历list和中序遍历list，重构这个树"><span class="nav-number">1.0.0.2.1.</span> <span class="nav-text">[7*-重建二叉树]给定一个二叉树的后序遍历list和中序遍历list，重构这个树</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#09-使用两个栈来构造队列，实现appendTail和deleteHead"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">[09-使用两个栈来构造队列，实现appendTail和deleteHead]</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#10斐波那契数列、上n级台阶的方式总数-：动态规划"><span class="nav-number">1.0.0.3.1.</span> <span class="nav-text">[10斐波那契数列、上n级台阶的方式总数]：动态规划</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-旋转数组中的最小元素-把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">[11-旋转数组中的最小元素]把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-矩阵中的数字-请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">[12-矩阵中的数字]请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#13-机器人的运动范围-地上有一个m行n列的方格，从坐标-0-0-到坐标-m-1-n-1-。一个机器人从坐标-0-0-的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。请问该机器人能够到达多少个格子？"><span class="nav-number">1.0.0.5.1.</span> <span class="nav-text">[13-机器人的运动范围]地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。请问该机器人能够到达多少个格子？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-割绳子-把长度为n的绳子分为m段，每段是整数，m个数乘积最大"><span class="nav-number">1.0.0.5.2.</span> <span class="nav-text">[14-割绳子]把长度为n的绳子分为m段，每段是整数，m个数乘积最大</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-割绳子-n的取值更大了，可能出现很大的数，但由于语言特性，理论上-Python-中的变量取值范围由系统内存大小决定（无限大），因此在-Python-中其实不用考虑大数越界问题。"><span class="nav-number">1.0.0.5.3.</span> <span class="nav-text">[14*-割绳子]n的取值更大了，可能出现很大的数，但由于语言特性，理论上 Python 中的变量取值范围由系统内存大小决定（无限大），因此在 Python 中其实不用考虑大数越界问题。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#15-二进制后1的个数"><span class="nav-number">1.0.0.5.4.</span> <span class="nav-text">[15-二进制后1的个数]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-数值的整数次方"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">[16-数值的整数次方]</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#17-打印1到最大的n位数"><span class="nav-number">1.0.0.6.1.</span> <span class="nav-text">[17-打印1到最大的n位数]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#18-删除链表的节点-：给定链表head，删除值为val的节点。假定val一定存在且唯一"><span class="nav-number">1.0.0.6.2.</span> <span class="nav-text">[18-删除链表的节点]：给定链表head，删除值为val的节点。假定val一定存在且唯一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#21-调整数组顺序使得奇数在偶数前面"><span class="nav-number">1.0.0.6.3.</span> <span class="nav-text">[21-调整数组顺序使得奇数在偶数前面]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-链表中倒数k个节点-：输入一个链表，输出该链表中倒数k个节点。"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">[22-链表中倒数k个节点]：输入一个链表，输出该链表中倒数k个节点。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#24-反转链表-：双指针可以做"><span class="nav-number">1.0.0.7.1.</span> <span class="nav-text">[24-反转链表]：双指针可以做</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26判断树的子结构-：输入两棵二叉树A和B，判断B是不是A的子结构。-约定空树不是任意一个树的子结构）。B是A的子结构，-即-A中有出现和B相同的结构和节点值。"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">[26判断树的子结构]：输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构）。B是A的子结构， 即 A中有出现和B相同的结构和节点值。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#27反转二叉树"><span class="nav-number">1.0.0.8.1.</span> <span class="nav-text">[27反转二叉树]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28-对称二叉树-：检查一个二叉树是否是中心轴对称的"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">[28-对称二叉树]：检查一个二叉树是否是中心轴对称的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#29-顺时针打印矩阵-：输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。（一层一层剥开）"><span class="nav-number">1.0.0.9.1.</span> <span class="nav-text">[29-顺时针打印矩阵]：输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。（一层一层剥开）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#30-包含min函数的栈-：设计一个栈，请在该类型中实现一个能够得到栈的最小元素的-min-函数在该栈中，调用-min、push-及-pop-的时间复杂度都是-O-1-。"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">[30-包含min函数的栈]：设计一个栈，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#31-栈的压入与弹出-输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。"><span class="nav-number">1.0.0.11.</span> <span class="nav-text">[31-栈的压入与弹出]输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#32-从上到下广度优先打印二叉树-：从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。"><span class="nav-number">1.0.0.11.1.</span> <span class="nav-text">[32-从上到下广度优先打印二叉树]：从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#32-从上到下分层打印二叉树"><span class="nav-number">1.0.0.11.2.</span> <span class="nav-text">[32-从上到下分层打印二叉树]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32-从上到下分层打印二叉树，第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，以此类推"><span class="nav-number">1.0.0.12.</span> <span class="nav-text">[32-从上到下分层打印二叉树，第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，以此类推]</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -391,13 +415,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -426,7 +450,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADMM/" rel="tag">ADMM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensor/" rel="tag">Tensor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%91%E6%8C%87offer/" rel="tag">剑指offer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADMM/" rel="tag">ADMM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensor/" rel="tag">Tensor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a><span class="tag-list-count">2</span></li></ul>
         </canvas>
         </div>
       </div>
