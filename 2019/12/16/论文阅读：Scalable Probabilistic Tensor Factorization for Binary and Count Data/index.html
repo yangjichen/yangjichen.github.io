@@ -20,18 +20,37 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="jichenyeung@gmail.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="窝">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="本周阅读了论文Scalable Probabilistic Tensor Factorization for Binary and Count Data，这是一篇和我们工作非常相似且发表时间较近的论文。作者在文中考虑对binary和count类型的tensor进行分解，用到的技巧有Bayes共轭推断，Polya-Gamma augmentation、Gibbs采样、EM算法等，综合来看是一篇比较理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读：Scalable Probabilistic Tensor Factorization for Binary and Count Data">
+<meta property="og:url" content="http://yoursite.com/2019/12/16/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9AScalable%20Probabilistic%20Tensor%20Factorization%20for%20Binary%20and%20Count%20Data/index.html">
 <meta property="og:site_name" content="窝">
-<meta property="og:description" content="jichenyeung@gmail.com">
+<meta property="og:description" content="本周阅读了论文Scalable Probabilistic Tensor Factorization for Binary and Count Data，这是一篇和我们工作非常相似且发表时间较近的论文。作者在文中考虑对binary和count类型的tensor进行分解，用到的技巧有Bayes共轭推断，Polya-Gamma augmentation、Gibbs采样、EM算法等，综合来看是一篇比较理">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image001.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image002.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image003.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image004.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image005.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image006.png">
+<meta property="og:image" content="file:////Users/yangjichen/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png">
+<meta property="og:image" content="file:////Users/yangjichen/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image011.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image012.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image013.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image014.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image015.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image016.png">
+<meta property="og:image" content="http://yoursite.com/image/bclip_image017.png">
+<meta property="article:published_time" content="2019-12-16T04:00:00.000Z">
+<meta property="article:modified_time" content="2019-12-16T04:00:00.000Z">
 <meta property="article:author" content="杨继琛">
-<meta property="article:tag" content="统计&#x2F;机器学习">
+<meta property="article:tag" content="Binary Tensor">
+<meta property="article:tag" content="Count Tensor">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/image/bclip_image001.png">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/">
+<link rel="canonical" href="http://yoursite.com/2019/12/16/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9AScalable%20Probabilistic%20Tensor%20Factorization%20for%20Binary%20and%20Count%20Data/">
 
 
 <script id="page-configurations">
@@ -39,11 +58,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | 窝</title>
+  <title>论文阅读：Scalable Probabilistic Tensor Factorization for Binary and Count Data | 窝</title>
   
 
 
@@ -156,129 +175,158 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 8 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/16/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9AScalable%20Probabilistic%20Tensor%20Factorization%20for%20Binary%20and%20Count%20Data/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpg">
+      <meta itemprop="name" content="杨继琛">
+      <meta itemprop="description" content="jichenyeung@gmail.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          论文阅读：Scalable Probabilistic Tensor Factorization for Binary and Count Data
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-16 12:00:00" itemprop="dateCreated datePublished" datetime="2019-12-16T12:00:00+08:00">2019-12-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tensor-completion/" itemprop="url" rel="index"><span itemprop="name">Tensor completion</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <p>本周阅读了论文Scalable Probabilistic Tensor Factorization for Binary and Count Data，这是一篇和我们工作非常相似且发表时间较近的论文。作者在文中考虑对binary和count类型的tensor进行分解，用到的技巧有Bayes共轭推断，Polya-Gamma augmentation、Gibbs采样、EM算法等，综合来看是一篇比较理论和技巧性都非常强的文章。下面我们介绍该文章的一些细节。</p>
+ <a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>基于CP分解我们可以将模型写成如下形式，</p>
+<img src="/image/bclip_image001.png" style="zoom:50%;" />
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-28T21:22:35+08:00"
-              content="2020-02-28">
-          02-28
-        </time>
-      </div>
+<p>其中f对应于我们想采用的分布，传入的参数是一个三维的tensor，这和我们在ExpAirCP中的假定非常像，但是我们的f固定是exponential family的形式且传入的参数就是canonical parameter，从这点而言我们的模型更容易借助到一些指数分布族的理论性质。为了进一步化简我们记</p>
+<img src="/image/bclip_image002.png" style="zoom:50%;" />
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/28/terminal%E5%B8%B8%E7%94%A8%E6%B1%87%E6%80%BB/" itemprop="url">
-            <span itemprop="name">terminal常用汇总</span>
-          </a>
-      </h2>
+<p>那么整个似然函数就可以写成</p>
+<img src="/image/bclip_image003.png" style="zoom:50%;" />
 
-    </header>
-  </article>
+<p>当m取不同值的时候分别可以对应到binary的情形与negative Binomial的情形。接下来采用Polya-Gamma augmentation技巧，将上式可以写成gaussian的形式，</p>
+<img src="/image/bclip_image004.png" style="zoom:50%;" />
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>其中w就是从Polya-Gamma distribution中采样得来的。为了使用Gaussian先验的共轭性质，我们假定另外两个参数也服从Gaussian prior如下，</p>
+<img src="/image/bclip_image005.png" style="zoom:50%;" />
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-28T21:18:27+08:00"
-              content="2020-02-28">
-          02-28
-        </time>
-      </div>
+<img src="/image/bclip_image006.png" alt="5" style="zoom:50%;" />
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/28/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url">
-            <span itemprop="name">Hexo常用命令</span>
-          </a>
-      </h2>
+<p>这样就使得后验分布同样是Gaussian的，那么第一种求解的方法很自然就是Gibbs采样，具体形式如下，我们现需要采样<img src="file:////Users/yangjichen/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png" alt="img">)，然后采样<img src="file:////Users/yangjichen/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png" alt="img">，这两者的均值和方差参数分别可以通过如下式子计算得来，</p>
+<img src="/image/bclip_image011.png" style="zoom:50%;" />
 
-    </header>
-  </article>
+<img src="/image/bclip_image012.png" style="zoom:50%;" />
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>但这种方式计算量很大，所以作者提出了更好的EM算法作为改进，其中E步去计算w的期望，M步去最大化两个参数的的似然函数，</p>
+<img src="/image/bclip_image013.png" style="zoom:50%;" />
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-28T15:06:02+08:00"
-              content="2020-02-28">
-          02-28
-        </time>
-      </div>
+<img src="/image/bclip_image014.png" style="zoom:50%;" />
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/28/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATrace%20Norm%20Regularized%20CANDECOMP:PARAFAC%20Decomposition%20With%20Missing%20Data/" itemprop="url">
-            <span itemprop="name">论文阅读：Trace Norm Regularized CANDECOMP:PARAFAC Decomposition With Missing Data</span>
-          </a>
-      </h2>
+<p>因为上式中的S和t均是tensor元素求和计算而来的，所以可以进一步变成online-EM算法，每一批数据进来后更新一次S和t，</p>
+<img src="/image/bclip_image015.png" style="zoom:50%;" />
 
-    </header>
-  </article>
+<p>有了这一方法后，就不用整体去计算，而是随着数据的到来一次次更新计算，效率更高。也可以人为将全部数据划分为mini-batch来应用这一方法</p>
+<p>作者在实验部分探索了以下三点：</p>
+<ol>
+<li>相同时间的情况下，采用哪种方式收敛的更快。</li>
+</ol>
+<img src="/image/bclip_image016.png" style="zoom:100%;" />
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<ol start="2">
+<li><p>如果给factor matrix U矩阵添加一些非负限制，能得到什么结果。</p>
+</li>
+<li><p>Missing ratio不同的时候，这些算法效果如何。</p>
+</li>
+</ol>
+<img src="/image/bclip_image017.png" style="zoom:100%;" />
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-21T20:54:33+08:00"
-              content="2020-02-21">
-          02-21
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/21/%E5%89%91%E6%8C%87offer/" itemprop="url">
-            <span itemprop="name">剑指offer</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-17T12:00:00+08:00"
-              content="2020-01-17">
-          01-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/17/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATensor%20Completion%20Algorithms%20in%20Big%20Data%20Analytics/" itemprop="url">
-            <span itemprop="name">论文阅读：Tensor Completion Algorithms in Big Data Analytics</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<p>三个实验中Online-EM表现均不错。这篇文章所使用的方法是之前不曾见过的，很有启发。</p>
 
     </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>杨继琛
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/12/16/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9AScalable%20Probabilistic%20Tensor%20Factorization%20for%20Binary%20and%20Count%20Data/" title="论文阅读：Scalable Probabilistic Tensor Factorization for Binary and Count Data">http://yoursite.com/2019/12/16/论文阅读：Scalable Probabilistic Tensor Factorization for Binary and Count Data/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Binary-Tensor/" rel="tag"># Binary Tensor</a>
+              <a href="/tags/Count-Tensor/" rel="tag"># Count Tensor</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/1996/02/22/Hello%20world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/31/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9AImputation%20of%20Streaming%20Low-Rank%20Tensor%20Data/" rel="next" title="论文阅读：Imputation of Streaming Low-Rank Tensor Data">
+      论文阅读：Imputation of Streaming Low-Rank Tensor Data <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
