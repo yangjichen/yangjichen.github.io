@@ -20,18 +20,31 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="jichenyeung@gmail.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="窝">
-<meta property="og:url" content="http://yoursite.com/categories/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html">
+  <meta name="description" content="本周阅读了Tensor Completion Algorithms in Big Data Analytics这篇论文，对低秩张量补全问题做了较为全面的概括。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读：Tensor Completion Algorithms in Big Data Analytics">
+<meta property="og:url" content="http://yoursite.com/2020/01/17/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATensor%20Completion%20Algorithms%20in%20Big%20Data%20Analytics/index.html">
 <meta property="og:site_name" content="窝">
-<meta property="og:description" content="jichenyeung@gmail.com">
+<meta property="og:description" content="本周阅读了Tensor Completion Algorithms in Big Data Analytics这篇论文，对低秩张量补全问题做了较为全面的概括。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/image/clip_image001.png">
+<meta property="og:image" content="http://yoursite.com/image/clip_image002.png">
+<meta property="og:image" content="http://yoursite.com/image/clip_image003.png">
+<meta property="og:image" content="http://yoursite.com/image/clip_image004.png">
+<meta property="og:image" content="http://yoursite.com/image/clip_image005.png">
+<meta property="og:image" content="http://yoursite.com/image/clip_image006.png">
+<meta property="og:image" content="http://yoursite.com/image/clip_image007.png">
+<meta property="og:image" content="http://yoursite.com/image/clip_image008.png">
+<meta property="og:image" content="http://yoursite.com/image/clip_image0010.png">
+<meta property="article:published_time" content="2020-01-17T04:00:00.000Z">
+<meta property="article:modified_time" content="2020-01-17T04:00:00.000Z">
 <meta property="article:author" content="杨继琛">
-<meta property="article:tag" content="统计&#x2F;机器学习">
+<meta property="article:tag" content="Tensor">
+<meta property="article:tag" content="ADMM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/image/clip_image001.png">
 
-<link rel="canonical" href="http://yoursite.com/categories/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
+<link rel="canonical" href="http://yoursite.com/2020/01/17/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATensor%20Completion%20Algorithms%20in%20Big%20Data%20Analytics/">
 
 
 <script id="page-configurations">
@@ -39,11 +52,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>分类: 使用说明 | 窝</title>
+  <title>论文阅读：Tensor Completion Algorithms in Big Data Analytics | 窝</title>
   
 
 
@@ -156,70 +169,134 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">使用说明
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/17/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATensor%20Completion%20Algorithms%20in%20Big%20Data%20Analytics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpg">
+      <meta itemprop="name" content="杨继琛">
+      <meta itemprop="description" content="jichenyeung@gmail.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          论文阅读：Tensor Completion Algorithms in Big Data Analytics
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-17 12:00:00" itemprop="dateCreated datePublished" datetime="2020-01-17T12:00:00+08:00">2020-01-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tensor-completion/" itemprop="url" rel="index"><span itemprop="name">Tensor completion</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <p>本周阅读了Tensor Completion Algorithms in Big Data Analytics这篇论文，对低秩张量补全问题做了较为全面的概括。</p>
+<a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-28T21:22:35+08:00"
-              content="2020-02-28">
-          02-28
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/28/terminal%E5%B8%B8%E7%94%A8%E6%B1%87%E6%80%BB/" itemprop="url">
-            <span itemprop="name">terminal常用汇总</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-28T21:18:27+08:00"
-              content="2020-02-28">
-          02-28
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/28/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url">
-            <span itemprop="name">Hexo常用命令</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+<p>这一问题最原始的定义为</p>
+<p><img src="/image/clip_image001.png" alt="img"></p>
+<p>由此便衍生出了三类基本算法，第一类是基于张量Decomposition的。拿CP分解为例，如果张量可以用以下factor matrix的外积来表示，</p>
+<p><img src="/image/clip_image002.png" alt="img"></p>
+<p>那么就可以用EM-like Approach和Missing-Skipping approach两种方法来进行张量补全。前者使用如下方式更新，</p>
+<p><img src="/image/clip_image003.png" alt="img"></p>
+<p>每一轮更新后的X继续用于下一轮的张量分解，直到算法收敛，所以称为EM-like。经典的算法有CP-ALS，其缺点也很明显，随着缺失数据比例的增长精度会大幅下降且容易收敛到局部最优。后者只利用观测数据的信息，并不在每一轮对X进行更新，其目标函数可以写成</p>
+<p><img src="/image/clip_image004.png" alt="img"></p>
+<p>其中最常用的D函数就是likelihood，这一方法在missing ratio较高时更加稳健，但因为只对观测值进行考量，更难以优化。Tucker分解也对应了这样的两类补全方法。这两种分解方式有各自的优点:(1) 如果仅在乎补全准确性而不是解释性，那么Tucker分解更加合适。(2) CP分解的优点在于因为只有因子矩阵，所以解释性更强，容易加入辅助信息来进行提升，且因为没有引入core tensor，所有运算都是矩阵层面的，更容易拓展到large scale的情形。</p>
+<p>第二类算法则是基于Trace norm，将原始的LRTC问题简化为了，</p>
+<p><img src="/image/clip_image005.png" alt="img"></p>
+<p>这一方法的优势在于将rank转化为了trace norm，所以不用再预先指定rank，一个经典的算法FaLRTC就是研究了如下问题，</p>
+<p><img src="/image/clip_image006.png" alt="img"></p>
+<p>作者分别使用ADMM和block coordinate descent来解决了这一问题。</p>
+<p>第三类算法则是基于Riemannian优化，算法分为两步，第一步是构造Tucker流形和tangent space且用梯度法对目标函数进行更新，第二步称为retraction map，将更新好的张量映射到低秩张量流形上。</p>
+<p>基于这三类基本算法，研究者进一步提出了结合辅助信息的张量补全算法，主要分为两大类，第一类通过构造张量每个维度的相似性矩阵来引入惩罚项以提升补全准确率。第二类算法的想法则是引入一个Y矩阵，这一矩阵与原始张量在某个方向上是共享latent factors，那么就可以通过一起分解来提升准确率，具体问题定义如下，</p>
+<p><img src="/image/clip_image007.png" alt="img"></p>
+<p>为了对large scale数据进行处理，研究者们又提出了scalable tensor completion算法，其主要解决了两个问题，第一个是张量在计算过程中通常需要unfolding成矩阵形式，这一中间过程会消耗非常大的储存空间。第二个则是如何将处理的数据合理分散化，也就是如何并行去处理。为了解决这些问题，通常会结合一些并行计算框架。</p>
+<p>另一类非常吸引人的问题则是流数据处理问题，这类问题假定张量大小随着时间增长，需要实时进行处理。主要分为两类，第一类假定只有一个维度增长，这类问题比较常见，比如说在舆情分析过程当中，数据在时间维度上累积。第二类问题则是多个维度一起增长，对应的问题也更加复杂，如下图所示，</p>
+<p><img src="/image/clip_image008.png" alt="img"></p>
+<p><img src="/image/clip_image0010.png" alt="img"></p>
+<p>在未来的工作中，我们希望对streaming tensor analysis进行进一步的研究，更好的处理流数据来达到实时舆情分析。</p>
 
     </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>杨继琛
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/01/17/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ATensor%20Completion%20Algorithms%20in%20Big%20Data%20Analytics/" title="论文阅读：Tensor Completion Algorithms in Big Data Analytics">http://yoursite.com/2020/01/17/论文阅读：Tensor Completion Algorithms in Big Data Analytics/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tensor/" rel="tag"># Tensor</a>
+              <a href="/tags/ADMM/" rel="tag"># ADMM</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/1996/02/22/Hello%20world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/21/%E5%89%91%E6%8C%87offer/" rel="next" title="剑指offer">
+      剑指offer <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
