@@ -20,20 +20,23 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="我是杨继琛，  本科(2014-2018)：复旦大学数学学院&#x2F;大数据学院–信息与计算科学 硕士(2018-2021)：复旦大学大数据学院–统计学  科研方向 张量补全问题 非参统计  主要修读课程 机器学习&#x2F;高等统计学习 统计学基础 统计计算 金融计量学&#x2F;大数据与金融风险管理 数据可视化 时间序列与空间统计 凸优化  联系方式邮箱：jichenyeung@gmail.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）：暑期实习面试一直很顺利，直到在蚂蚁交叉面遇到了UCLA数学系大牛Wotao Yin。没面试前觉得运气有点差，遇到这种等级的大佬可能要gg，面试后也跟很多人抱怨过怎么会问的这么理论和专业，仅是面试一个机器学习岗的暑期实习却问这么恐怖的问题。这些内容我原本很确定不会出现在面试中所以没去复习。今天对问题一一做了总结，并且将答案一一找到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="蚂蚁交叉面反思与总结">
+<meta property="og:url" content="http://yoursite.com/2020/04/15/%E8%9A%82%E8%9A%81%E4%BA%A4%E5%8F%89%E9%9D%A2%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="窝">
-<meta property="og:description" content="我是杨继琛，  本科(2014-2018)：复旦大学数学学院&#x2F;大数据学院–信息与计算科学 硕士(2018-2021)：复旦大学大数据学院–统计学  科研方向 张量补全问题 非参统计  主要修读课程 机器学习&#x2F;高等统计学习 统计学基础 统计计算 金融计量学&#x2F;大数据与金融风险管理 数据可视化 时间序列与空间统计 凸优化  联系方式邮箱：jichenyeung@gmail.com">
+<meta property="og:description" content="蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）：暑期实习面试一直很顺利，直到在蚂蚁交叉面遇到了UCLA数学系大牛Wotao Yin。没面试前觉得运气有点差，遇到这种等级的大佬可能要gg，面试后也跟很多人抱怨过怎么会问的这么理论和专业，仅是面试一个机器学习岗的暑期实习却问这么恐怖的问题。这些内容我原本很确定不会出现在面试中所以没去复习。今天对问题一一做了总结，并且将答案一一找到">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-28T12:28:54.000Z">
-<meta property="article:modified_time" content="2020-02-28T12:41:06.853Z">
+<meta property="og:image" content="http://yoursite.com/image/mayi1.png">
+<meta property="og:image" content="http://yoursite.com/image/mayi2.png">
+<meta property="article:published_time" content="2020-04-15T11:02:38.308Z">
+<meta property="article:modified_time" content="2020-04-15T11:08:07.308Z">
 <meta property="article:author" content="杨继琛">
-<meta property="article:tag" content="统计&#x2F;机器学习">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/image/mayi1.png">
 
-<link rel="canonical" href="http://yoursite.com/about/">
+<link rel="canonical" href="http://yoursite.com/2020/04/15/%E8%9A%82%E8%9A%81%E4%BA%A4%E5%8F%89%E9%9D%A2%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/">
 
 
 <script id="page-configurations">
@@ -41,12 +44,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>About | 窝
-  </title>
+  <title>蚂蚁交叉面反思与总结 | 窝</title>
   
 
 
@@ -155,63 +157,136 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">About
-</h1>
-
-<div class="post-meta">
+      
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/15/%E8%9A%82%E8%9A%81%E4%BA%A4%E5%8F%89%E9%9D%A2%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpg">
+      <meta itemprop="name" content="杨继琛">
+      <meta itemprop="description" content="jichenyeung@gmail.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          蚂蚁交叉面反思与总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-15 19:02:38 / 修改时间：19:08:07" itemprop="dateCreated datePublished" datetime="2020-04-15T19:02:38+08:00">2020-04-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）："><a href="#蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）：" class="headerlink" title="蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）："></a>蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）：</h3><p><strong>暑期实习面试一直很顺利，直到在蚂蚁交叉面遇到了UCLA数学系大牛Wotao Yin。没面试前觉得运气有点差，遇到这种等级的大佬可能要gg，面试后也跟很多人抱怨过怎么会问的这么理论和专业，仅是面试一个机器学习岗的暑期实习却问这么恐怖的问题。这些内容我原本很确定不会出现在面试中所以没去复习。今天对问题一一做了总结，并且将答案一一找到，发现这些内容或多或少见过但是没有深入理解，而且绝对是有针对自己做过的一些研究从而衍生出的提问。</strong><br><strong>而后有一些被点醒的感觉，我认为统计背景来找机器学习算法岗工作的话，优势就在于统计素养，而不是千篇一律大家都会的经典机器学习或是xgboost或是leetcode，独特性和不可取代性才是就业的第一竞争力。接下来的时间里将巩固这些学过的统计学知识，将优势最大化。</strong></p>
+ <a id="more"></a>
+
+<ol>
+<li>为什么用ADMM，目标问题本身不是convex；你验证（Wotao Yin, 2018）条件的时候遇到了哪些困难（详细描述了下）</li>
+<li>Exponential family有哪些好的性质（答：一二阶导数的性质），问积分上面好的性质（没答出来，如下图。从下一问可以看出，这个性质在EM算法里面有比较好的应用）</li>
+</ol>
+<p><img src="/image/mayi1.png" alt="image-20200415190659034"></p>
+<ol start="3">
+<li>讲下EM算法，EM算法通常来讲E步和M步哪个更复杂（我说M需要求最大值点，可能较难。被告知E需要求条件期望更难，解析写在最后）</li>
+<li>MAP和MLE区别在哪，MAP怎么算置信区间。（以下内容应该是从decision theory推导而来的）</li>
+</ol>
+<ul>
+<li>Choosing the narrowest interval, which for a <a href="https://en.wikipedia.org/wiki/Unimodal_distribution" target="_blank" rel="noopener">unimodal distribution</a> will involve choosing those values of highest probability density including the <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank" rel="noopener">mode</a> (the <em><a href="https://en.wikipedia.org/wiki/Maximum_a_posteriori" target="_blank" rel="noopener">maximum a posteriori</a></em>). This is sometimes called the <strong>highest posterior density interval</strong> (HPDI)。<strong>MAP（mode）的CI：包含MAP且积分为$1-\alpha$中最窄的那个CI</strong></li>
+<li>Choosing the interval where the probability of being below the interval is as likely as being above it. This interval will include the <a href="https://en.wikipedia.org/wiki/Median_(statistics)" target="_blank" rel="noopener">median</a>. This is sometimes called the <strong>equal-tailed interval</strong>. <strong>median的CI：CI两侧的积分分别是$\alpha/2$</strong></li>
+<li>Assuming that the mean exists, choosing the interval for which the <a href="https://en.wikipedia.org/wiki/Mean_(statistics)" target="_blank" rel="noopener">mean</a> is the central point. <strong>mean的CI：积分为$1-\alpha$且mean是中点的CI</strong></li>
+</ul>
+<ol start="5">
+<li>lasso缺点（被提示从估计量性质去思考，答有偏），发现lasso不好的时候怎么去解决（没答出来，说什么优化，完全没听过）</li>
+</ol>
+<p>(Yuan Yao, 2016 Split LBI)，In fact, recently <a href="">[Osh+16]</a> shows that under nearly the same conditions as standard Lasso, LBI may achieve sign-consistency but with a less biased estimator than Lasso*</p>
+<hr>
+<h4 id="EM算法的总结："><a href="#EM算法的总结：" class="headerlink" title="EM算法的总结："></a>EM算法的总结：</h4><p>E-step：Compute <strong>expectation of the joint log likelihood for the complete data, conditional on the observed data $X = x$.</strong> Namely,<br>$$<br>\begin{aligned} Q\left(\boldsymbol{\theta} | \boldsymbol{\theta}^{(t)}\right) &amp;=E\left{\log L(\boldsymbol{\theta} | \mathbf{Y}) | \mathbf{x}, \boldsymbol{\theta}^{(t)}\right} \ &amp;=E\left{\log f_{\mathbf{Y}}(\mathbf{y} | \boldsymbol{\theta}) | \mathbf{x}, \boldsymbol{\theta}^{(t)}\right} \ &amp;=\int\left[\log f_{\mathbf{Y}}(\mathbf{y} | \boldsymbol{\theta})\right] f_{\mathbf{Z} | \mathbf{X}}\left(\mathbf{z} | \mathbf{x}, \boldsymbol{\theta}^{(t)}\right) d \mathbf{z} \end{aligned}<br>$$<br>M-step：$ \theta^{(t+1)} = $ Maximize $Q(\theta|\theta^{(t)})$ with repect to $\theta$. </p>
+<p><strong>E难点</strong>在于期望可能很难解析计算：两种改进方法，1. 指数分布族有比较好的性质 2. Monte Carlo模拟</p>
+<p><strong>M难点</strong>在于优化，可以使用ECM或者gradient方法来改进</p>
+<h4 id="EM-for-exponential-family"><a href="#EM-for-exponential-family" class="headerlink" title="EM for exponential family"></a>EM for exponential family</h4><p>假设complete data $y$ 服从指数分布族。主要用了两个性质，一是求导和积分可交换，二是一阶导等于期望，极大将EM过程简化。</p>
+<p><img src="/image/mayi2.png" alt="image-20200415190736649"></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>杨继琛
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/04/15/%E8%9A%82%E8%9A%81%E4%BA%A4%E5%8F%89%E9%9D%A2%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/" title="蚂蚁交叉面反思与总结">http://yoursite.com/2020/04/15/蚂蚁交叉面反思与总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
-</header>
 
-      
-      
-      
-      <div class="post-body">
-          <p>我是杨继琛，</p>
-<ul>
-<li>本科(2014-2018)：复旦大学数学学院/大数据学院–信息与计算科学</li>
-<li>硕士(2018-2021)：复旦大学大数据学院–统计学</li>
-</ul>
-<h3 id="科研方向"><a href="#科研方向" class="headerlink" title="科研方向"></a>科研方向</h3><ul>
-<li>张量补全问题</li>
-<li>非参统计</li>
-</ul>
-<h3 id="主要修读课程"><a href="#主要修读课程" class="headerlink" title="主要修读课程"></a>主要修读课程</h3><ol>
-<li>机器学习/高等统计学习</li>
-<li>统计学基础</li>
-<li>统计计算</li>
-<li>金融计量学/大数据与金融风险管理</li>
-<li>数据可视化</li>
-<li>时间序列与空间统计</li>
-<li>凸优化</li>
-</ol>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p>邮箱：<a href="jichenyeung@gmail.com">jichenyeung@gmail.com</a></p>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+          </div>
 
-      </div>
-      
-      
-      
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/22/OJ%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%80%BB%E7%BB%93%EF%BC%81/" rel="prev" title="OJ输入输出总结！">
+      <i class="fa fa-chevron-left"></i> OJ输入输出总结！
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
+      </footer>
     
+  </article>
+  
+  
+  
 
-    
-    
-    
   </div>
 
 
@@ -263,7 +338,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#科研方向"><span class="nav-number">1.</span> <span class="nav-text">科研方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要修读课程"><span class="nav-number">2.</span> <span class="nav-text">主要修读课程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联系方式"><span class="nav-number">3.</span> <span class="nav-text">联系方式</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）："><span class="nav-number">1.</span> <span class="nav-text">蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EM算法的总结："><span class="nav-number">1.1.</span> <span class="nav-text">EM算法的总结：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EM-for-exponential-family"><span class="nav-number">1.2.</span> <span class="nav-text">EM for exponential family</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
