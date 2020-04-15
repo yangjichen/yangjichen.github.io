@@ -28,9 +28,10 @@
 <meta property="og:description" content="蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）：暑期实习面试一直很顺利，直到在蚂蚁交叉面遇到了UCLA数学系大牛Wotao Yin。没面试前觉得运气有点差，遇到这种等级的大佬可能要gg，面试后也跟很多人抱怨过怎么会问的这么理论和专业，仅是面试一个机器学习岗的暑期实习却问这么恐怖的问题。这些内容我原本很确定不会出现在面试中所以没去复习。今天对问题一一做了总结，并且将答案一一找到">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/image/mayi1.png">
+<meta property="og:image" content="http://yoursite.com/image/mayi3.png">
 <meta property="og:image" content="http://yoursite.com/image/mayi2.png">
 <meta property="article:published_time" content="2020-04-15T11:02:38.308Z">
-<meta property="article:modified_time" content="2020-04-15T11:17:37.493Z">
+<meta property="article:modified_time" content="2020-04-15T11:20:12.145Z">
 <meta property="article:author" content="杨继琛">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
@@ -190,7 +191,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-15 19:02:38 / 修改时间：19:17:37" itemprop="dateCreated datePublished" datetime="2020-04-15T19:02:38+08:00">2020-04-15</time>
+              <time title="创建时间：2020-04-15 19:02:38 / 修改时间：19:20:12" itemprop="dateCreated datePublished" datetime="2020-04-15T19:02:38+08:00">2020-04-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +236,9 @@
 </ol>
 <p>(Yuan Yao, 2016 Split LBI)，In fact, recently <a href="">[Osh+16]</a> shows that under nearly the same conditions as standard Lasso, LBI may achieve sign-consistency but with a less biased estimator than Lasso*</p>
 <hr>
-<h4 id="EM算法的总结："><a href="#EM算法的总结：" class="headerlink" title="EM算法的总结："></a>EM算法的总结：</h4><p>E-step：Compute <strong>expectation of the joint log likelihood for the complete data, conditional on the observed data $X = x$.</strong> Namely,<br>$$<br>\begin{aligned} Q\left(\boldsymbol{\theta} | \boldsymbol{\theta}^{(t)}\right) &amp;=E\left{\log L(\boldsymbol{\theta} | \mathbf{Y}) | \mathbf{x}, \boldsymbol{\theta}^{(t)}\right} \ &amp;=E\left{\log f_{\mathbf{Y}}(\mathbf{y} | \boldsymbol{\theta}) | \mathbf{x}, \boldsymbol{\theta}^{(t)}\right} \ &amp;=\int\left[\log f_{\mathbf{Y}}(\mathbf{y} | \boldsymbol{\theta})\right] f_{\mathbf{Z} | \mathbf{X}}\left(\mathbf{z} | \mathbf{x}, \boldsymbol{\theta}^{(t)}\right) d \mathbf{z} \end{aligned}<br>$$<br>M-step：$ \theta^{(t+1)} = $ Maximize $Q(\theta|\theta^{(t)})$ with repect to $\theta$. </p>
+<h4 id="EM算法的总结："><a href="#EM算法的总结：" class="headerlink" title="EM算法的总结："></a>EM算法的总结：</h4><p>E-step：Compute <strong>expectation of the joint log likelihood for the complete data, conditional on the observed data $X = x$.</strong> Namely,</p>
+<p><img src="/image/mayi3.png" alt="image-20200415191959129"></p>
+<p>M-step：$ \theta^{(t+1)} = $ Maximize $Q(\theta|\theta^{(t)})$ with repect to $\theta$. </p>
 <p><strong>E难点</strong>在于期望可能很难解析计算：两种改进方法，1. 指数分布族有比较好的性质 2. Monte Carlo模拟</p>
 <p><strong>M难点</strong>在于优化，可以使用ECM或者gradient方法来改进</p>
 <h4 id="EM-for-exponential-family"><a href="#EM-for-exponential-family" class="headerlink" title="EM for exponential family"></a>EM for exponential family</h4><p>假设complete data $y$ 服从指数分布族。主要用了两个性质，一是求导和积分可交换，二是一阶导等于期望，极大将EM过程简化。</p>
