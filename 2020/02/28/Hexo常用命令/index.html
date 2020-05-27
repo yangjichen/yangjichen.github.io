@@ -218,14 +218,12 @@
       
         <p>刚刚使用Hexo，不是很熟练。这里简单记录一些常用的Hexo+Next命令</p>
 <a id="more"></a>
-
 <ol>
 <li>为了方便插图及文章分类，头部添加如下</li>
 </ol>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">typora-root-url: ../../source</span><br><span class="line"><span class="keyword">tags:</span></span><br><span class="line">  - XXX</span><br><span class="line">  - YYY</span><br><span class="line">categories: XXX</span><br></pre></td></tr></table></figure>
-
 <p>我觉得使用插件或者为每个文章划分文件夹并不方便，还是采取了自己舒服的方式。正常从外部拖动图片在Typora中编辑md文件。(注意此时要把头部添加的代码先写进去，之后自动就能完成相对路径的引用。)编辑完成后右击每个图片链接然后将图片复制到<code>source/image</code>文件夹，然后由于第一行设定了路径，索引图片时<code>/image/image-20200228150743790.png</code>即可。</p>
-<ol start="2">
+<ol>
 <li>hexo clean 清除缓存</li>
 <li>hexo d -g 将更新同步到网页</li>
 <li>为了在网页将文章折叠，在md想要折叠的位置<code>&lt;!-- more --&gt;</code></li>

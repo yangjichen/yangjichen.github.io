@@ -216,22 +216,21 @@
       
         <h5 id="蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）："><a href="#蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）：" class="headerlink" title="蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）："></a>蚂蚁花呗交叉面（UCLA印卧涛，达摩P10，4月11日，22min）：</h5><p>暑期实习面试一直很顺利，直到在蚂蚁交叉面遇到了UCLA数学系大牛Wotao Yin。没面试前觉得运气有点差，遇到这种等级的大佬可能要gg，面试后也跟很多人抱怨过怎么会问的这么理论和专业，仅是面试一个机器学习岗的暑期实习却问这么恐怖的问题。这些内容我原本很确定不会出现在面试中所以没去复习。今天对问题一一做了总结，并且将答案一一找到，发现这些内容或多或少见过但是没有深入理解，而且绝对是有针对自己做过的一些研究从而衍生出的提问。<br>而后有一些被点醒的感觉，我认为统计背景来找机器学习算法岗工作的话，优势就在于统计素养，而不是千篇一律大家都会的经典机器学习或是xgboost或是leetcode，独特性和不可取代性才是就业的第一竞争力。接下来的时间里将巩固这些学过的统计学知识，将优势最大化。</p>
  <a id="more"></a>
-
 <ol>
 <li>为什么用ADMM，目标问题本身不是convex；你验证（Wotao Yin, 2018）条件的时候遇到了哪些困难（详细描述了下）</li>
 <li>Exponential family有哪些好的性质（答：一二阶导数的性质），问积分上面好的性质（没答出来，如下图。从下一问可以看出，这个性质在EM算法里面有比较好的应用）</li>
 </ol>
 <p><img src="/image/mayi1.png" alt="image-20200415190659034"></p>
-<ol start="3">
+<ol>
 <li>讲下EM算法，EM算法通常来讲E步和M步哪个更复杂（我说M需要求最大值点，可能较难。被告知E需要求条件期望更难，解析写在最后）</li>
 <li>MAP和MLE区别在哪，MAP怎么算置信区间。（以下内容应该是从decision theory推导而来的）</li>
 </ol>
 <ul>
-<li>Choosing the narrowest interval, which for a <a href="https://en.wikipedia.org/wiki/Unimodal_distribution" target="_blank" rel="noopener">unimodal distribution</a> will involve choosing those values of highest probability density including the <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank" rel="noopener">mode</a> (the <em><a href="https://en.wikipedia.org/wiki/Maximum_a_posteriori" target="_blank" rel="noopener">maximum a posteriori</a></em>). This is sometimes called the <strong>highest posterior density interval</strong> (HPDI)。<strong>MAP（mode）的CI：包含MAP且积分为$1-\alpha$中最窄的那个CI</strong></li>
-<li>Choosing the interval where the probability of being below the interval is as likely as being above it. This interval will include the <a href="https://en.wikipedia.org/wiki/Median_(statistics)" target="_blank" rel="noopener">median</a>. This is sometimes called the <strong>equal-tailed interval</strong>. <strong>median的CI：CI两侧的积分分别是</strong>$\alpha/2$</li>
-<li>Assuming that the mean exists, choosing the interval for which the <a href="https://en.wikipedia.org/wiki/Mean_(statistics)" target="_blank" rel="noopener">mean</a> is the central point. <strong>mean的CI：积分为</strong>$1-\alpha$<strong>且mean是中点的CI</strong></li>
+<li>Choosing the narrowest interval, which for a <a href="https://en.wikipedia.org/wiki/Unimodal_distribution" target="_blank" rel="noopener">unimodal distribution</a> will involve choosing those values of highest probability density including the <a href="https://en.wikipedia.org/wiki/Mode_(statistics" target="_blank" rel="noopener">mode</a>) (the <em><a href="https://en.wikipedia.org/wiki/Maximum_a_posteriori" target="_blank" rel="noopener">maximum a posteriori</a></em>). This is sometimes called the <strong>highest posterior density interval</strong> (HPDI)。<strong>MAP（mode）的CI：包含MAP且积分为$1-\alpha$中最窄的那个CI</strong></li>
+<li>Choosing the interval where the probability of being below the interval is as likely as being above it. This interval will include the <a href="https://en.wikipedia.org/wiki/Median_(statistics" target="_blank" rel="noopener">median</a>). This is sometimes called the <strong>equal-tailed interval</strong>. <strong>median的CI：CI两侧的积分分别是</strong>$\alpha/2$</li>
+<li>Assuming that the mean exists, choosing the interval for which the <a href="https://en.wikipedia.org/wiki/Mean_(statistics" target="_blank" rel="noopener">mean</a>) is the central point. <strong>mean的CI：积分为</strong>$1-\alpha$<strong>且mean是中点的CI</strong></li>
 </ul>
-<ol start="5">
+<ol>
 <li>lasso缺点（被提示从估计量性质去思考，答有偏），发现lasso不好的时候怎么去解决（没答出来，说什么优化，完全没听过）</li>
 </ol>
 <p>(Yuan Yao, 2016 Split LBI)，In fact, recently <a href="">[Osh+16]</a> shows that under nearly the same conditions as standard Lasso, LBI may achieve sign-consistency but with a less biased estimator than Lasso*</p>

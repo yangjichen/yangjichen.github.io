@@ -226,26 +226,17 @@
 <p>规则顺序： <strong>L –&gt; E –&gt; G –&gt;G-&gt; B</strong>，从内向外一层一层搜索</p>
 <p>当内部作用域想修改外部作用域的变量时，就要用到global和nonlocal关键字了。</p>
  <a id="more"></a>
-
 <ol>
 <li>比如说修改全局变量值</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> num  <span class="comment"># 需要使用 global 关键字声明</span></span><br><span class="line">    print(num) </span><br><span class="line">    num = <span class="number">123</span></span><br><span class="line">    print(num)</span><br><span class="line">fun1()</span><br><span class="line">print(num)</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<ol>
 <li>如果要修改嵌套作用域（enclosing 作用域，外层非全局作用域）中的变量则需要 nonlocal 关键字了，如下</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">()</span>:</span></span><br><span class="line">    num = <span class="number">10</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> num   <span class="comment"># nonlocal关键字声明</span></span><br><span class="line">        num = <span class="number">100</span></span><br><span class="line">        print(num)</span><br><span class="line">    inner()</span><br><span class="line">    print(num)</span><br><span class="line">outer()</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#如下形式是会报错的，因为 test 函数中的 a 使用的是局部，未定义，无法修改。</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    a = a + <span class="number">1</span></span><br><span class="line">    print(a)</span><br><span class="line">test()</span><br><span class="line"><span class="comment">#修改 a 为全局变量，通过函数参数传递，可以正常执行输出结果为：</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(a)</span>:</span></span><br><span class="line">    a = a + <span class="number">1</span></span><br><span class="line">    print(a)</span><br><span class="line">test(a)</span><br><span class="line"><span class="comment">#这种方法等价于</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">  	<span class="keyword">global</span> a</span><br><span class="line">    a = a + <span class="number">1</span></span><br><span class="line">    print(a)</span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
-
 <p>说明=其实在函数中起到名称和值绑定的作用，如果我们对外层list进行append或者pop操作则不会报错，比如</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    a.append(<span class="number">1</span>)</span><br><span class="line">    print(a)</span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
-
-
-
 <p>总结：在相对内部空间使用某个变量的时候，如果仅是调用名称获取值，那么会从内向外一层一层去找，是可以的。但是如果对其重新<code>a = a+1</code>形式的话是不行的；如果<code>a = 3</code>就相当于在内部又定义了个a，不会改变外部a的值；但<code>a.append,  a.pop</code>这类是可以的。</p>
 <p>如果想从内部修改外部的值，最好的方法就是声明global或者nonlocal。</p>
 <p><strong><em>平时应该很难遇上，写递归的时候如果有参数更新，需要注意。</em></strong></p>
