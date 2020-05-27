@@ -279,7 +279,7 @@ PDP的**重要假设**是C 中的特征与 S 中的特征不相关。
 <h3 id="5-2-个体条件期望-Individual-Conditional-Expectation）"><a href="#5-2-个体条件期望-Individual-Conditional-Expectation）" class="headerlink" title="5.2 个体条件期望 (Individual Conditional Expectation）"></a>5.2 个体条件期望 (Individual Conditional Expectation）</h3><p>为了解决上面PDP的缺点4，我们使用ICE。为每个样本画一条预测线(C属性不变，S属性从小到大)，共得到n条线。上述的PDP其实是ICE上所有线的平均值。<strong>如果ICE上所有曲线都遵循相同的路线，那说明没有明显的相互作用，没有异质效应。这意味着 PDP 已经很好地概括了S特征对机器学习模型的预测结果的边际效应。</strong></p>
 <p><img src="/image/Intepre9.png" alt="image-20200526181222574" style="zoom:30%;" /></p>
 <ol>
-<li><p>ICE 图存在一个问题:有时很难判断 ICE 图在个体之间是否不同，因为它们从不同的预测开始。一种简单的解决方案是将曲线中心化于特征中的某个点，并仅显示到该点的预测差异。结果图称为中心化 ICE 图 (c-ICE)$\hat{f}_{c e n t}^{(i)}=\hat{f}^{(i)}-\mathbf{1} \hat{f}\left(x^{a}, x_{C}^{(i)}\right)$。中心化 ICE 图使比较单个实例的曲线变得更加容易。如果我们不希望看到预测值的绝对变化，而 是希望预测与特征范围的固定点相比的差异，这将很有用。</p>
+<li><p>ICE 图存在一个问题:有时很难判断 ICE 图在个体之间是否不同，因为它们从不同的预测开始。一种简单的解决方案是将曲线中心化于特征中的某个点，并仅显示到该点的预测差异。结果图称为中心化 ICE 图 (c-ICE)$\hat{f}<em>{c e n t}^{(i)}=\hat{f}^{(i)}-\mathbf{1} \hat{f}\left(x^{a}, x</em>{C}^{(i)}\right)$。中心化 ICE 图使比较单个实例的曲线变得更加容易。如果我们不希望看到预测值的绝对变化，而 是希望预测与特征范围的固定点相比的差异，这将很有用。</p>
 </li>
 <li><p>导数 ICE 图 (d-ICE)从视觉上更容易发现异质性：观察预测函数相对于特征的导数。但d-ICE 图需要很长时间才能计算出来， 这是不切实际的。</p>
 </li>
@@ -310,7 +310,7 @@ PDP的**重要假设**是C 中的特征与 S 中的特征不相关。
 <li>ALE 图对预测的变化进行平均，然后将其累积在网格上</li>
 </ol>
 <script type="math/tex; mode=display">
-\begin{aligned} \hat{f}_{x_{S}, A L E}\left(x_{S}\right) &=\int_{z_{0,1}}^{x_{S}} E_{X_{C} | X_{S}}\left[\hat{f}^{S}\left(X_{s}, X_{c}\right) | X_{S}=z_{S}\right] d z_{S}-\text { constant } \\ &=\int_{z_{0,1}}^{x_{S}} \int_{x_{C}} \hat{f}^{S}\left(z_{s}, x_{c}\right) \mathbb{P}\left(x_{C} | z_{S}\right) d x_{C} d z_{S}-\text { constant } \end{aligned}</script><p>2与3的差异：1）$\hat{f}^{S}\left(x_{s}, x_{c}\right)=\frac{\delta \hat{f}\left(x_{S}, x_{C}\right)}{\delta x_{S}}$这一项其实是S区间中平均预测的变化，即梯度。2）比较来看ALE其实是M的积分形式。3）减去cons做中心化</p>
+\begin{aligned} \hat{f}_{x_{S}, A L E}\left(x_{S}\right) &=\int_{z_{0,1}}^{x_{S}} E_{X_{C} | X_{S}}\left[\hat{f}^{S}\left(X_{s}, X_{c}\right) | X_{S}=z_{S}\right] d z_{S}-\text { constant } \\ &=\int_{z_{0,1}}^{x_{S}} \int_{x_{C}} \hat{f}^{S}\left(z_{s}, x_{c}\right) \mathbb{P}\left(x_{C} | z_{S}\right) d x_{C} d z_{S}-\text { constant } \end{aligned}</script><p>2与3的差异：1）$\hat{f}^{S}\left(x<em>{s}, x</em>{c}\right)=\frac{\delta \hat{f}\left(x<em>{S}, x</em>{C}\right)}{\delta x_{S}}$这一项其实是S区间中平均预测的变化，即梯度。2）比较来看ALE其实是M的积分形式。3）减去cons做中心化</p>
 <p>问题：并不是所有模型都有梯度，比如随机森林</p>
 <h4 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h4><p>为了估计局部效应，我们将特征划分为许多区间并计算预测值之间的差异。此过程近似梯度，也适用于没有梯度的模型。先计算非中心化效应，</p>
 <script type="math/tex; mode=display">
