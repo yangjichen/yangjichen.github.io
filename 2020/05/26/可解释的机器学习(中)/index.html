@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://yoursite.com/image/Intepre18.png">
 <meta property="og:image" content="http://yoursite.com/image/Intepre19.png">
 <meta property="article:published_time" content="2020-05-26T08:37:04.130Z">
-<meta property="article:modified_time" content="2020-05-27T11:55:06.153Z">
+<meta property="article:modified_time" content="2020-05-27T12:00:39.634Z">
 <meta property="article:author" content="杨继琛">
 <meta property="article:tag" content="Interpretable">
 <meta name="twitter:card" content="summary">
@@ -208,7 +208,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 19:55:06" itemprop="dateModified" datetime="2020-05-27T19:55:06+08:00">2020-05-27</time>
+                <time title="修改时间：2020-05-27 20:00:39" itemprop="dateModified" datetime="2020-05-27T20:00:39+08:00">2020-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,27 +233,17 @@
       
         <p>最近阅读了Interpretable Machine Learning这本书，将书中内容简单进行了总结，分为上中下三部分笔记，分别是1）可解释的模型 2）模型无关方法的解释 3）基于样本的解释</p>
  <a id="more"></a>
-<h1 id="第五章-模型无关的方法"><a href="#第五章-模型无关的方法" class="headerlink" title="第五章 模型无关的方法"></a>第五章 模型无关的方法</h1><font color= 'red'>个人总结：</font>本章讲述了一下几个工具，我将其可使用性进行了评价。
-
-1. PDP可以看到某一变量取值对于最终预测的边际贡献值，缺点是不适用于变量有相关性的情况。
-
-2. ICE与PDP反映内容相同，但是展示的是每个样本的某一变量对于最终预测的贡献，缺点同上
-
-3. ALE 是部分依赖图 (PDP) 的更快、更无偏的替代方法。且当特征不独立的时候，ALE比PDP好用。<font color= 'red'>推荐去实现</font>
-
+<h1 id="第五章-模型无关的方法"><a href="#第五章-模型无关的方法" class="headerlink" title="第五章 模型无关的方法"></a>第五章 模型无关的方法</h1><p>个人总结：本章讲述了一下几个工具，我将其可使用性进行了评价。</p>
 <ol>
-<li><p>特征交互分析中的H统计量，用来看预测时每个变量与剩余所有变量交互强度的大小，<font color= 'red'>我暂时没想到这有什么样的作用。</font></p>
-</li>
-<li><p>置换特征重要性。一种广义计算特征重要性的方法，不依赖于模型。<font color= 'red'>推荐去实现</font></p>
-</li>
-<li><p>全局代理模型：用可解释性强的简单模型去近似复杂模型。我认为没啥用！</p>
-</li>
-<li><p>局部代理模型：用来解释个体预测值是受什么样的局部决策边界影响。我认为有点像是基于样本的解释。<font color= 'blue'>我觉得用处不大，但是书中比较多的出现</font></p>
-</li>
-<li><p>Shapley值：给定当前的一组属性值，属性值对实际预测值与平均预测值之差的贡献就是估计的 Shapley 值。我认为这个可以用来解释某一个体为什么预测值比均值要低多少。<font color= 'blue'>推荐去实现有相同功能但是更加快和广泛的SHAP值</font></p>
-</li>
-<li><p>SHAP值：基于博弈论上的最佳 Shapley 值，我认为这个是实现个体预测解释很好的工具！另外这也可以作为重要性度量去实现。<font color= 'red'>推荐去实现</font></p>
-</li>
+<li>PDP可以看到某一变量取值对于最终预测的边际贡献值，缺点是不适用于变量有相关性的情况。</li>
+<li>ICE与PDP反映内容相同，但是展示的是每个样本的某一变量对于最终预测的贡献，缺点同上</li>
+<li>ALE 是部分依赖图 (PDP) 的更快、更无偏的替代方法。且当特征不独立的时候，ALE比PDP好用。<font color= 'red'>推荐去实现</font></li>
+<li>特征交互分析中的H统计量，用来看预测时每个变量与剩余所有变量交互强度的大小，<font color= 'red'>我暂时没想到这有什么样的作用。</font></li>
+<li>置换特征重要性。一种广义计算特征重要性的方法，不依赖于模型。<font color= 'red'>推荐去实现</font></li>
+<li>全局代理模型：用可解释性强的简单模型去近似复杂模型。我认为没啥用！</li>
+<li>局部代理模型：用来解释个体预测值是受什么样的局部决策边界影响。我认为有点像是基于样本的解释。<font color= 'blue'>我觉得用处不大，但是书中比较多的出现</font></li>
+<li>Shapley值：给定当前的一组属性值，属性值对实际预测值与平均预测值之差的贡献就是估计的 Shapley 值。我认为这个可以用来解释某一个体为什么预测值比均值要低多少。<font color= 'blue'>推荐去实现有相同功能但是更加快和广泛的SHAP值</font></li>
+<li>SHAP值：基于博弈论上的最佳 Shapley 值，我认为这个是实现个体预测解释很好的工具！另外这也可以作为重要性度量去实现。<font color= 'red'>推荐去实现</font></li>
 </ol>
 <p>综上：去做model free解释性的时候，ALE、置换特征重要性、SHAP是三个我认为最值得去实现的工具。</p>
 <hr>
