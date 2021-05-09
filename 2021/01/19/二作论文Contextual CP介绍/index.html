@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Welcome to Jichen’s Blog! I will mainly record some notes about learning Statistics &#x2F; Machine Learning &#x2F; Algorithms &#x2F; Tensor Completion. 欢迎来到继琛的博客，在这里我将主要记录一些统计&#x2F; 机器学习&#x2F; 算法&#x2F; 张量补全的研究与学习。">
+  <meta name="description" content="Contextual-CP-Decomposition论文及代码细节。文章已经投递🤩🤩🤩 希望好运~~~代码可在github获取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/1996/02/22/Hello%20world/index.html">
+<meta property="og:title" content="二作论文Contextual CP介绍">
+<meta property="og:url" content="http://yoursite.com/2021/01/19/%E4%BA%8C%E4%BD%9C%E8%AE%BA%E6%96%87Contextual%20CP%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="窝">
-<meta property="og:description" content="Welcome to Jichen’s Blog! I will mainly record some notes about learning Statistics &#x2F; Machine Learning &#x2F; Algorithms &#x2F; Tensor Completion. 欢迎来到继琛的博客，在这里我将主要记录一些统计&#x2F; 机器学习&#x2F; 算法&#x2F; 张量补全的研究与学习。">
+<meta property="og:description" content="Contextual-CP-Decomposition论文及代码细节。文章已经投递🤩🤩🤩 希望好运~~~代码可在github获取">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="1996-02-22T04:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-28T11:55:40.721Z">
+<meta property="article:published_time" content="2021-01-19T08:30:57.440Z">
+<meta property="article:modified_time" content="2021-05-09T08:20:25.904Z">
 <meta property="article:author" content="杨继琛">
-<meta property="article:tag" content="统计&#x2F;机器学习">
+<meta property="article:tag" content="Tensor">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/1996/02/22/Hello%20world/">
+<link rel="canonical" href="http://yoursite.com/2021/01/19/%E4%BA%8C%E4%BD%9C%E8%AE%BA%E6%96%87Contextual%20CP%E4%BB%8B%E7%BB%8D/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>Hello World | 窝</title>
+  <title>二作论文Contextual CP介绍 | 窝</title>
   
 
 
@@ -163,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1996/02/22/Hello%20world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/19/%E4%BA%8C%E4%BD%9C%E8%AE%BA%E6%96%87Contextual%20CP%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/1.jpg">
@@ -176,7 +176,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          二作论文Contextual CP介绍
         </h1>
 
         <div class="post-meta">
@@ -186,15 +186,24 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：1996-02-22 12:00:00" itemprop="dateCreated datePublished" datetime="1996-02-22T12:00:00+08:00">1996-02-22</time>
+              <time title="创建时间：2021-01-19 16:30:57" itemprop="dateCreated datePublished" datetime="2021-01-19T16:30:57+08:00">2021-01-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 19:55:40" itemprop="dateModified" datetime="2020-02-28T19:55:40+08:00">2020-02-28</time>
+                <time title="修改时间：2021-05-09 16:20:25" itemprop="dateModified" datetime="2021-05-09T16:20:25+08:00">2021-05-09</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tensor-completion/" itemprop="url" rel="index"><span itemprop="name">Tensor completion</span></a>
+                </span>
+            </span>
 
           
 
@@ -207,9 +216,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a href="https://yangjichen.github.io" target="_blank" rel="noopener">Jichen’s Blog</a>! I will mainly record some notes about learning Statistics / Machine Learning / Algorithms / Tensor Completion.</p>
-<p>欢迎来到继琛的<a href="https://yangjichen.github.io" target="_blank" rel="noopener">博客</a>，在这里我将主要记录一些统计/ 机器学习/ 算法/ 张量补全的研究与学习。</p>
-<a id="more"></a>
+        <p>Contextual-CP-Decomposition论文及代码细节。文章已经投递🤩🤩🤩 希望好运~~~<br>代码可在github获取</p>
+  <a id="more"></a>
+<h1 id="Contextual-CP-Decomposition"><a href="#Contextual-CP-Decomposition" class="headerlink" title="Contextual-CP-Decomposition"></a>Contextual-CP-Decomposition</h1><p>We propose a new decomposition framework called Contextual CP decomposition (CCP) model, which incorporate the additional information to estimate the underlying structures that are more accurate and more interpretable. Here we present code logic and data acquisition methods.</p>
+<h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Tensor decomposition is among the most important tool for low rank structures extraction in tensor data analysis. In many scenarios, informative covariates from various domains are available, which can potentially drive the underlying structures of the observed data. Classical CANDECOMP/PARAFAC (CP) decomposition method only focuses on the relational information among objects, and cannot make use of such additional information. In this article, we propose a new decomposition framework called Contextual CP decomposition (CCP) model, which incorporate the additional information to estimate the underlying structures that are more accurate and more interpretable. The framework is closely related to several existing methods and make sense in various situations. Moreover, we develop an efficient algorithm for parameter estimation. We demonstrate the advantages of our proposal with comprehensive simulations and real data analysis on GDELT political events study. The empirical results show that our method offers improved modeling strategy as well as efficient computation.</p>
+<h3 id="Prepare-the-environment"><a href="#Prepare-the-environment" class="headerlink" title="Prepare the environment"></a>Prepare the environment</h3><p>To run this code, you need to install the dependencies as follows,</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">numpy&#x3D;&#x3D;1.16.4</span><br><span class="line">tensorly&#x3D;&#x3D;0.5.0</span><br><span class="line">pandas&#x3D;&#x3D;0.23.4</span><br><span class="line">gdelt&#x3D;&#x3D;0.1.10.6</span><br><span class="line">matplotlib&#x3D;&#x3D;3.0.2</span><br></pre></td></tr></table></figure>
+<h3 id="Simulation"><a href="#Simulation" class="headerlink" title="Simulation"></a>Simulation</h3><p>Contains 5 parts：</p>
+<p><del><code>simulation_v1.py</code>: Toy model</del></p>
+<p><code>simulation_v2.py</code>: Investige the effect of increased dimensions and various SNRs.</p>
+<p><code>simulation_v3.py</code>: Compare the elapsed time for <strong>CCP</strong> and <strong>CPALS</strong>.</p>
+<p><code>simulation_v4.py</code>: Explore the accuracy of covariate-relevant terms estimation.</p>
+<p><code>simulation_v5.py</code>: Examine the robustness of <strong>CCP</strong> to heavy-tailed noise.</p>
+<p><code>simulation_v6.py</code>: We investigate the special case that auxiliary information is unavailable, and provide the numerical evidence that CP decomposition is the degenerate case of the <strong>CCP</strong> model. </p>
+<h3 id="Real-Dataset-Study"><a href="#Real-Dataset-Study" class="headerlink" title="Real Dataset Study"></a>Real Dataset Study</h3><p>Contains 3 steps：</p>
+<p><code>GDELT1.py</code>: Download a subset of GDELT dataset which covers the period from January, 2018 to December, 2018.</p>
+<p><code>GDELT2.py</code>: Calculate the number of diplomatic events between the above 20 countries, and reorder the dataset as a tensor.</p>
+<p><code>GDELT3.py</code>: Explore the relationship between the country’s geopolitical power and the frequency of diplomatic events by using our algorithms.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h3><p>For details of the algorithm and implementation, see our paper:</p>
+<p>[1] Jichen yang, Nan Zhang. “Contextual Tensor Decomposition by Projected Alternating Least Squares”. Submitted. </p>
 
     </div>
 
@@ -225,7 +250,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/1996/02/22/Hello%20world/" title="Hello World">http://yoursite.com/1996/02/22/Hello world/</a>
+    <a href="http://yoursite.com/2021/01/19/%E4%BA%8C%E4%BD%9C%E8%AE%BA%E6%96%87Contextual%20CP%E4%BB%8B%E7%BB%8D/" title="二作论文Contextual CP介绍">http://yoursite.com/2021/01/19/二作论文Contextual CP介绍/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -235,17 +260,20 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tensor/" rel="tag"># Tensor</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2019/12/16/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9AScalable%20Probabilistic%20Tensor%20Factorization%20for%20Binary%20and%20Count%20Data/" rel="next" title="论文阅读：Scalable Probabilistic Tensor Factorization for Binary and Count Data">
-      论文阅读：Scalable Probabilistic Tensor Factorization for Binary and Count Data <i class="fa fa-chevron-right"></i>
+    <a href="/2020/12/12/%E5%B7%AB%E5%B8%88%E4%B8%89%E6%B8%B8%E7%8E%A9%E4%BD%93%E9%AA%8C/" rel="prev" title="巫师三游玩体验">
+      <i class="fa fa-chevron-left"></i> 巫师三游玩体验
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -305,6 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Contextual-CP-Decomposition"><span class="nav-number">1.</span> <span class="nav-text">Contextual-CP-Decomposition</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview"><span class="nav-number">1.0.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prepare-the-environment"><span class="nav-number">1.0.2.</span> <span class="nav-text">Prepare the environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Simulation"><span class="nav-number">1.0.3.</span> <span class="nav-text">Simulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Dataset-Study"><span class="nav-number">1.0.4.</span> <span class="nav-text">Real Dataset Study</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">1.0.5.</span> <span class="nav-text">Reference:</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
